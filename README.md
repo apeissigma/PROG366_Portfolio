@@ -4,7 +4,8 @@ Last updated: 11/2/2025
 
 ## Big O Notation
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/tree/main/src/BigO)
-Big O notation describes the complexity of an algorithm, independent of the hardware, software, or language it's running on.
+
+Big OÂ notation describes the complexity of an algorithm, independent of the hardware, software, or language it's running on.
 **Time Complexity** (see [code](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/BigO/BigODemo.cs) for examples with explanations)
 + O(1) Constant Time: Performance is the same regardless of the size of the input data.
 + O(n) Linear Time: Performance grows linearly and in direct proportions to the size of the input data set. 
@@ -12,6 +13,7 @@ Big O notation describes the complexity of an algorithm, independent of the hard
 
 ## The Fisher-Yates Shuffle
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/tree/main/src/Shuffle)
+
 The Fisher-Yates algorithm generates a random, unbiased permutation of a sequence by randomly drawing an element from the sequence to shuffle until no elements remain. 
 **Implementation**
  The algorithm is implemented in the "Deck" class on line 23 as Shuffle(). It shuffles a list of cards in place as many times as there are cards in the deck and returns the shuffled deck. It is called in the "Forecast" class in the Go() function using the unshuffled deck as a parameter. 
@@ -21,12 +23,14 @@ The Fisher-Yates algorithm generates a random, unbiased permutation of a sequenc
 
 ### Linked Lists
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/DataStructures/LinkedListDemo.cs)
+
 Linked lists are linear data structures that organize elements (nodes) in sequential order, with each element storing a reference to the next element. 
 + Linked lists are fast and flexible to use, but must be traversed linearly and use more sotrage in memory.
 + Traditional linked lists are traversed forwards, while doubly linked lists can be traversed forwards and backwards due to nodes having references to both the next and previous nodes.
 
 ### Stacks & Queues
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/DataStructures/StackQueue/QueueStackDemo.cs)
+
 (Both implementations are built on top of the linked list implementation.)
 #### Stacks
 Stacks are data structures that store elements in a last-in, first-out (LIFO) order.
@@ -37,6 +41,7 @@ Queues are data structures that store elements in a first-in, first-out (FIFO) o
 
 ### Arrays & Maps
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/DataStructures/Map/MapDemo.cs)
+
 #### Arrays
 Arrays are linear data structures that store a sequence of elements of the same type.
 + Elements are indexed, and array indexes are 0-based.
