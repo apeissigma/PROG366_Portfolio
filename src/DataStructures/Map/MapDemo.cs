@@ -7,7 +7,10 @@ public class MapDemo
 {
     public MapDemo()
     {
-
+        Console.WriteLine("\n===== Linear Hashmap Implementation =====");
+        LinHashDemo();
+        Console.WriteLine("\n===== Chaining Hashmap Implementation =====");
+        ChainHashDemo();
     }
     public void LinHashDemo()
     {

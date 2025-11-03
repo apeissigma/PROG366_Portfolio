@@ -1,7 +1,7 @@
 ﻿using BigO;
 using Shuffle;
-using DataStructures;
-using DataStructures.Map; 
+using DataStructures.Map;
+using DataStructures.StackQueue;
 
 namespace PROG366_Portfolio
 {
@@ -13,10 +13,7 @@ namespace PROG366_Portfolio
             //forcast.Go(); 
 
             MapDemo mapDemo = new MapDemo();
-            Console.WriteLine("\n===== Linear Hashmap Implementation =====");
-            mapDemo.LinHashDemo();
-            Console.WriteLine("\n===== Chaining Hashmap Implementation =====");
-            mapDemo.ChainHashDemo(); 
+            QueueStackDemo qsDemo = new QueueStackDemo();
         }
     }
 }
