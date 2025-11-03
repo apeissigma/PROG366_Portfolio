@@ -8,15 +8,14 @@ namespace DataStructures.Map
 {
     public class LinearHash
     {
-        HashData[] arr;
-        int size; //amount of obj in map
-        int cap; //capacity of map
+        public HashData[] arr;
+        public int size; //amount of obj in map
+        public int cap = 16; //default map capacity of 16
         
         //default constructor
         public LinearHash() 
         {
             size = 0;
-            cap = 16; //default capacity
             arr = new HashData[cap]; 
         }
 
@@ -33,7 +32,7 @@ namespace DataStructures.Map
             //iterate through arr; if key is found, return obj
             for (int i = 0; i < arr.Length; i++)
             {
-                if (arr[i].Key == key)
+                if (arr[i] != null && arr[i].Key == key)
                 {
                     return arr[i]; 
                 }
@@ -65,8 +64,6 @@ namespace DataStructures.Map
         {
             var temp = Get(key);
             arr[temp.Key] = null;
-            size--;
-            Resize(size);
             return temp; 
         }
 
@@ -83,19 +80,30 @@ namespace DataStructures.Map
             return k * 23 % cap; 
         }
 
+        //if the size of the map is larger than half the capacity, double the capacity
         private void Resize(int size)
         {
             if (size >= cap / 2)
             {
-                cap = size * 2;
+                cap = cap * 2;
                 Array.Resize(ref arr, cap);
-                Console.WriteLine($"Array has been resized to {arr.Length}({cap})");
             }
-            else if (size <= cap / 2)
+        }
+
+        public void About()
+        {
+            Console.WriteLine($"\nMap size/cap: {size}/{cap}");
+
+            for (int i = 0; i < cap; i++)
             {
-                cap = size / 2;
-                Array.Resize(ref arr, cap);
-                Console.WriteLine($"Array has been resized to {arr.Length}({cap})");
+                if (arr[i] != null)
+                {
+                    Console.WriteLine($" > {arr[i].Key}: {arr[i].Value}");
+                }
+                else
+                {
+                    Console.WriteLine($" > {i}: --");
+                }
             }
         }
     }

@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 
 namespace DataStructures.Map
 {
@@ -6,13 +7,12 @@ namespace DataStructures.Map
     {
         public LinkedList<HashData>[] arr;
         int size; //amount of buckets in map
-        int cap; //capacity of map
+        public int cap = 16; //default map capacity of 16
 
         //default constructor
         public ChainingHash() 
         {
             size = 0;
-            cap = 16; //default capacity
             arr = new LinkedList<HashData>[cap];
             for (int i = 0; i < cap; i++)
             {
@@ -32,68 +32,123 @@ namespace DataStructures.Map
             }
         }
 
-        //TODO: write get method
         public HashData Get(int key) 
         {
-            return null; 
+            LinkedList<HashData> bucket = arr[Hash(key)]; //get the bucket by hashing the key
+
+            //iterate through the bucket
+            IIterator<HashData> iterator = bucket.Iterator(); 
+            while (iterator.HasNext())
+            {
+                HashData data = iterator.Next();
+                if (data.Key == key)
+                {
+                    return data;
+                }
+                    
+            }
+            return null; //return null if empty
         }
 
         public void Put(int key, string val) 
         {
             HashData temp = new HashData(key, val); //create temp dataObj
-            int hashCode = Hash(temp.Value); //uses value to generate hashcode
+            int hashCode = Hash(temp.Key); //uses value to generate hashcode
 
-            LinkedList<HashData> bucket = arr[hashCode];
+            LinkedList<HashData> bucket = arr[hashCode]; //gets the bucket that the obj will be put in
 
-            Node<HashData> current = bucket.Head; 
-            while (current != null && current.Value.Key != key)
+            Node<HashData> currentNode = bucket.Head; 
+            while (currentNode != null)
             {
-                current = current.Next; 
+                currentNode = currentNode.Next; //go to next node
             }
 
-            if (current.Value.Key == key)
+            if (currentNode == null) //find an empty spot
             {
-                current.Value.Value = val;
+                bucket.AddLast(temp); //add the obj to the end of the ll
+                size++;
+                Resize(size, this);
             }
-
-            bucket.AddFirst(temp);
-            size++;
-            Resize(size);
-
         }
 
-        //TODO: write deletion method
         public HashData Delete(int key) 
         {
-            return null;
+            var temp = Get(key);
+
+            if (temp == null)
+            {
+                return null; //return if not found
+            }
+
+            LinkedList<HashData> bucket = arr[Hash(key)]; //get the bucket by hashing the key
+            Node<HashData> currentNode = bucket.Head;
+
+            //if the head matches, delete the first obj in the ll
+            if (currentNode.Value.Key == key)
+            {
+                bucket.RemoveFirst();
+                return temp; 
+            }
+
+            //iterate through the rest of the bucket
+            while (currentNode.Next != null)
+            {
+                if (currentNode.Next.Value.Key == key)
+                {
+                    currentNode.Next = currentNode.Next.Next; //remove the node
+                }
+                currentNode = currentNode.Next; //go to next node
+            }
+            return temp;
         }
 
         //generates a hashCode using the sum of ASCII values in the obj's value
-        private int Hash(string val)
+        private int Hash(int val)
         {
-            int k = 0;
-            char[] arr = val.ToCharArray();
-            foreach (char c in arr)
-            {
-                k += (int)c;
-            }
-
-            return k * 23 % cap;
+            return val * 23 % cap;
         }
 
-        private void Resize(int size)
+        //if the size of the map is larger than half the capacity, double the capacity
+        private void Resize(int size, ChainingHash map)
         {
             if (size >= cap / 2)
             {
-                cap = size * 2;
+                cap = cap * 2;
                 Array.Resize(ref arr, cap);
-                Console.WriteLine($"Array has been resized to {arr.Length}({cap})");
+
+                //add linked lists in the newly added buckets
+                for (int i = 0; i < cap; i++)
+                {
+                    if (map.arr[i] == null)
+                    {
+                        arr[i] = new LinkedList<HashData>();
+                    }
+                }
             }
-            else if (size <= cap / 2)
+        }
+
+        public void About()
+        {
+            Console.WriteLine($"\nMap size/cap: {size}/{cap}");
+
+            for (int i = 0; i < cap; i++)
             {
-                cap = size / 2;
-                Array.Resize(ref arr, cap);
-                Console.WriteLine($"Array has been resized to {arr.Length}({cap})");
+                LinkedList<HashData> bucket = arr[i];
+
+                if (bucket.Head == null)
+                {
+                    continue; //skip empty buckets
+                }
+
+                Console.WriteLine($"Bucket {i}");
+
+                //iterate through the bucket
+                IIterator<HashData> iterator = bucket.Iterator();
+                while (iterator.HasNext())
+                {
+                    HashData data = iterator.Next();
+                    Console.WriteLine($" > {data.Key}: {data.Value}");
+                }
             }
         }
     }
