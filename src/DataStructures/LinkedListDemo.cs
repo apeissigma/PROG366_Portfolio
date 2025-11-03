@@ -10,6 +10,7 @@ namespace DataStructures
     {
         public LinkedListDemo()
         {
+            Console.WriteLine("\n===== Linked List Implementation =====");
             var ll = new LinkedList<int>();
             ll.AddFirst(0);
             ll.AddLast(1);

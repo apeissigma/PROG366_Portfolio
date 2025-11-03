@@ -1,5 +1,6 @@
 ﻿using BigO;
 using Shuffle;
+using DataStructures; 
 using DataStructures.Map;
 using DataStructures.StackQueue;
 
@@ -9,9 +10,9 @@ namespace PROG366_Portfolio
     {
         static void Main(string[] args)
         {
-            //Forcast forcast = new Forcast();
-            //forcast.Go(); 
-
+            BigODemo bigODemo = new BigODemo(); 
+            Forecast forecast = new Forecast();
+            LinkedListDemo llDemo = new LinkedListDemo(); 
             MapDemo mapDemo = new MapDemo();
             QueueStackDemo qsDemo = new QueueStackDemo();
         }

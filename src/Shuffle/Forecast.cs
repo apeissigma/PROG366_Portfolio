@@ -8,28 +8,27 @@ using Common;
 
 namespace Shuffle
 {
-    public class Forcast
-    {
-        public Utility util = new Utility();
-        
+    public class Forecast
+    {        
         Deck cards = new Deck();
 
-
-        public Forcast()
+        public Forecast()
         {
-            LoadDeck(); 
+            LoadDeck();
+            Go(); 
         }
 
         public void Go()
         {
-            util.Print("Your tarot card for today:");
+            Console.WriteLine("\n===== Mini Tarot (Fisher-Yates Implementation) =====");
+            Console.WriteLine("Your tarot card for today:");
             cards.Shuffle(cards.cards);
             ShowCard(cards.cards[0]);
         }
 
         public void ShowCard(Card card)
         {
-            util.Print($"{card.number}: {card.name}");
+            Console.WriteLine($"{card.number}: {card.name}");
         }
 
 
