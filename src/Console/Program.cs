@@ -1,8 +1,8 @@
 ﻿using BigO;
 using Shuffle;
-using DataStructures; 
 using DataStructures.Map;
 using DataStructures.StackQueue;
+using DataStructures.ArtApp;
 
 namespace PROG366_Portfolio
 {
@@ -10,11 +10,16 @@ namespace PROG366_Portfolio
     {
         static void Main(string[] args)
         {
-            BigODemo bigODemo = new BigODemo(); 
-            Forecast forecast = new Forecast();
-            LinkedListDemo llDemo = new LinkedListDemo(); 
-            MapDemo mapDemo = new MapDemo();
-            QueueStackDemo qsDemo = new QueueStackDemo();
+           ArtCollection collection = new ArtCollection(); ;  
+            
+            
+            /*
+             * BigODemo bigODemo = new BigODemo(); 
+                Forecast forecast = new Forecast();
+                LinkedListDemo llDemo = new LinkedListDemo(); 
+                MapDemo mapDemo = new MapDemo();
+                QueueStackDemo qsDemo = new QueueStackDemo();
+            */
         }
     }
 }
