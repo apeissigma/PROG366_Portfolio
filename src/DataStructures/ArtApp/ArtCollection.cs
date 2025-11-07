@@ -9,5 +9,7 @@ namespace DataStructures.ArtApp;
 
 public class ArtCollection
 {
-    public ArtArray artArr = new ArtArray();
+    //public ArtArray artArr = new ArtArray();
+    public ArtStack artStack = new ArtStack(); 
+    public ArtQueue artQueue = new ArtQueue();
 }
