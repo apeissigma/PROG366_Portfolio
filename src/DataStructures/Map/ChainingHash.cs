@@ -3,9 +3,13 @@ using System.Drawing;
 
 namespace DataStructures.Map
 {
-    public class ChainingHash
+    public class ChainingHash<Value>
     {
-        public LinkedList<HashData>[] arr;
+
+        //FIXING MAPS TO INCLUDE GENERICS, WILL BE WORKING AGAIN SOON...
+
+        /*
+        public LinkedList<HashData<Value>>[] arr;
         int size; //amount of buckets in map
         public int cap = 16; //default map capacity of 16
 
@@ -133,7 +137,7 @@ namespace DataStructures.Map
 
             for (int i = 0; i < cap; i++)
             {
-                LinkedList<HashData> bucket = arr[i];
+                LinkedList<HashData<Value>> bucket = arr[i];
 
                 if (bucket.Head == null)
                 {
@@ -146,10 +150,12 @@ namespace DataStructures.Map
                 IIterator<HashData> iterator = bucket.Iterator();
                 while (iterator.HasNext())
                 {
-                    HashData data = iterator.Next();
+                    HashData<Value> data = iterator.Next();
                     Console.WriteLine($" > {data.Key}: {data.Value}");
                 }
             }
         }
+          */
     }
+
 }

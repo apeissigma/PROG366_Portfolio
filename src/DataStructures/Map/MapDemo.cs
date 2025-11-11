@@ -5,6 +5,10 @@ namespace DataStructures.Map;
 
 public class MapDemo
 {
+
+    //FIXING MAPS TO INCLUDE GENERICS, WILL BE WORKING AGAIN SOON...
+
+    /*
     public MapDemo()
     {
         Console.WriteLine("\n===== Linear Hashmap Implementation =====");
@@ -12,6 +16,8 @@ public class MapDemo
         Console.WriteLine("\n===== Chaining Hashmap Implementation =====");
         ChainHashDemo();
     }
+
+    
     public void LinHashDemo()
     {
         LinearHash linHash = new LinearHash(5);
@@ -63,4 +69,5 @@ public class MapDemo
 
         chainHash.About();
     }
+    */
 }

@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Map
 {
-    public class HashData
+    public class HashData<Value>
     {
-        public int Key;
-        public string Value; 
+        public int key { get; set; }
+        public Value value {  get; set; }
 
-        public HashData(int key, string value)
+
+        public HashData(int k, Value v)
         {
-            Key = key;
-            Value = value;
+            key = k;
+            value = v;
         }
     }
 }

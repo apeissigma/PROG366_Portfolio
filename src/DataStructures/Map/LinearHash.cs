@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Map
 {
-    public class LinearHash
+    public class LinearHash<Value>
     {
-        public HashData[] arr;
+        public HashData<Value>[] arr;
         public int size; //amount of obj in map
         public int cap = 16; //default map capacity of 16
         
@@ -16,7 +16,7 @@ namespace DataStructures.Map
         public LinearHash() 
         {
             size = 0;
-            arr = new HashData[cap]; 
+            arr = new HashData<Value>[cap]; 
         }
 
         //overloaded constructor taking a custom capacity
@@ -24,15 +24,15 @@ namespace DataStructures.Map
         {
             size = 0;
             cap = capInput;
-            arr = new HashData[cap];
+            arr = new HashData<Value>[cap];
         }
 
-        public HashData Get(int key) 
+        public HashData<Value> Get(int key) 
         {
             //iterate through arr; if key is found, return obj
             for (int i = 0; i < arr.Length; i++)
             {
-                if (arr[i] != null && arr[i].Key == key)
+                if (arr[i] != null && arr[i].key == key)
                 {
                     return arr[i]; 
                 }
@@ -40,10 +40,10 @@ namespace DataStructures.Map
             return null; //key not found
         }
 
-        public void Put(int key, string val)
+        public void Put(int key, Value val)
         {
-            HashData temp = new HashData(key, val); //create temp dataObj
-            int hashCode = Hash(temp.Value); //uses value to generate hashcode
+            HashData<Value> temp = new HashData<Value>(key, val); //create temp dataObj
+            int hashCode = Hash(key); //uses key to generate hashcode
 
             while (arr[hashCode] != null)  //while buckets are filled...
             {
@@ -52,32 +52,23 @@ namespace DataStructures.Map
 
             if (arr[hashCode] == null) //if the bucket is empty...
             {
-                temp.Key = hashCode;
-                arr[temp.Key] = temp; //insert the obj into the map at the hashCode's position
+                arr[hashCode] = temp; //insert the obj into the map at the hashCode's position
                 size++; //a new obj was added, so increment the size 
+                Resize(size);
             }
-
-            Resize(size); 
         }
 
-        public HashData Delete(int key) 
+        public HashData<Value> Delete(int key) 
         {
             var temp = Get(key);
-            arr[temp.Key] = null;
+            arr[temp.key] = null;
             return temp; 
         }
 
-        //generates a hashCode using the sum of ASCII values in the obj's value
-        private int Hash(string val)
+        //generates a hashCode using the obj's key
+        private int Hash(int key)
         {
-            int k = 0;
-            char[] arr = val.ToCharArray();
-            foreach (char c in arr)
-            {
-                k += (int)c; 
-            }
-
-            return k * 23 % cap; 
+            return (key.GetHashCode() & 23) % cap; 
         }
 
         //if the size of the map is larger than half the capacity, double the capacity
@@ -98,7 +89,7 @@ namespace DataStructures.Map
             {
                 if (arr[i] != null)
                 {
-                    Console.WriteLine($" > {arr[i].Key}: {arr[i].Value}");
+                    Console.WriteLine($" > {arr[i].key}: {arr[i].value}");
                 }
                 else
                 {
