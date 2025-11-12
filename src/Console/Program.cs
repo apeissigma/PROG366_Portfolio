@@ -3,6 +3,7 @@ using Shuffle;
 using DataStructures.Map;
 using DataStructures.StackQueue;
 using DataStructures.ArtApp;
+using Sort;  
 
 namespace PROG366_Portfolio
 {
@@ -10,7 +11,10 @@ namespace PROG366_Portfolio
     {
         static void Main(string[] args)
         {
-           ArtCollection collection = new ArtCollection(); ;  
+            Sort.SortDemo demo = new Sort.SortDemo(); 
+            
+            
+            //ArtCollection collection = new ArtCollection(); ;  
             
             
             /*

@@ -8,10 +8,10 @@ namespace DataStructures.Tree
 {
     public class PQNode<T>
     {
-        public readonly int key; 
-        public readonly T value; 
+        public int key; 
+        public T value; 
 
-        PQNode(int key, T value)
+        public PQNode(int key, T value)
         {
             this.key = key;
             this.value = value;
