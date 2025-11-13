@@ -20,25 +20,28 @@ namespace Sort
         public SortDemo()
         {
             Scores = LoadData();
+            RunAllSorts(); 
+        }
 
+        public void RunAllSorts()
+        {
             Algorithms = new List<SortingAlgo>()
             {
                 new BubbleSort(),
-                new HeapSort(),
                 new InsertionSort(),
-                new MergeSort(),
-                new QuickSort(),
                 new SelectionSort()
+                 //new HeapSort(),
+                 //new QuickSort(),
+                 //new MergeSort(),
             };
 
             foreach (SortingAlgo algo in Algorithms)
             {
-                Timer.Start(); 
+                Timer.Start();
                 algo.Run(Scores);
                 Timer.Stop();
-                Console.WriteLine($"Runtime: {Timer.Elapsed.ToString()}");
+                Console.WriteLine($"\nRuntime: {Timer.Elapsed.ToString()}");
             }
-
         }
 
 
@@ -48,16 +51,6 @@ namespace Sort
             string file = $"..\\..\\..\\..\\Sort\\Data\\{fileName}";
 
             return File.ReadAllLines(file).Select(int.Parse).ToArray();  
-        }
-
-
-        private void About()
-        {
-            Console.WriteLine("name");
-            Console.WriteLine("description");
-            Console.WriteLine("notation");
-            Console.WriteLine("pseudocode");
-            Console.WriteLine("runtime");
         }
     }
 }

@@ -12,5 +12,10 @@ namespace Sort.Algorithms
         {
             
         }
+
+        public void Sort(int[] arr)
+        {
+
+        }
     }
 }

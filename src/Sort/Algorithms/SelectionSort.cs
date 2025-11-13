@@ -8,9 +8,34 @@ namespace Sort.Algorithms
 {
     public class SelectionSort : SortingAlgo
     {
+        public override string Name { get => "Selection Sort"; }
+
         public override void Run(int[] arr)
         {
+            Sort(arr);
+        }
 
+        public override void Sort(int[] arr)
+        {
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                //find minimum value
+                int min = i;
+
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[j] < arr[min])
+                    {
+                        min = arr[j];
+                    }
+                }
+
+                //swap
+                var temp = arr[i];
+                arr[i] = arr[min];
+                arr[min] = temp; 
+            }
+            Display(arr);
         }
     }
 }

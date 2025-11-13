@@ -11,7 +11,7 @@ namespace PROG366_Portfolio
     {
         static void Main(string[] args)
         {
-            Sort.SortDemo demo = new Sort.SortDemo(); 
+            SortDemo demo = new SortDemo(); 
             
             
             //ArtCollection collection = new ArtCollection(); ;  
