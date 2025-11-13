@@ -19,7 +19,6 @@ namespace Sort
 
         public SortDemo()
         {
-            Scores = LoadData();
             RunAllSorts(); 
         }
 
@@ -29,18 +28,19 @@ namespace Sort
             {
                 new BubbleSort(),
                 new InsertionSort(),
-                new SelectionSort()
+                new SelectionSort(),
                  //new HeapSort(),
-                 //new QuickSort(),
-                 //new MergeSort(),
+                 new QuickSort(),
+                new MergeSort()
             };
 
             foreach (SortingAlgo algo in Algorithms)
             {
+                Scores = LoadData(); 
                 Timer.Start();
                 algo.Run(Scores);
                 Timer.Stop();
-                Console.WriteLine($"\nRuntime: {Timer.Elapsed.ToString()}");
+                Console.WriteLine($"\n > Runtime: {Timer.Elapsed.ToString()}\n");
             }
         }
 

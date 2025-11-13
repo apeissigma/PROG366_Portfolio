@@ -13,6 +13,7 @@ namespace Sort.Algorithms
         public override void Run(int[] arr)
         {
             Sort(arr);
+            Display(arr);
         }
 
         public override void Sort(int[] arr)
@@ -26,7 +27,7 @@ namespace Sort.Algorithms
                 {
                     if (arr[j] < arr[min])
                     {
-                        min = arr[j];
+                        min = j;
                     }
                 }
 
@@ -35,7 +36,6 @@ namespace Sort.Algorithms
                 arr[i] = arr[min];
                 arr[min] = temp; 
             }
-            Display(arr);
         }
     }
 }

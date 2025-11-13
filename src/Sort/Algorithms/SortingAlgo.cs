@@ -15,7 +15,7 @@ namespace Sort.Algorithms
 
         public void Display(int[] arr)
         {
-            Console.WriteLine(this.Name);
+            Console.WriteLine("========== " + this.Name + " ========== ");
 
             foreach (var i in arr)
             {

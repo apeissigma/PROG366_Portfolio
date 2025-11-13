@@ -15,7 +15,8 @@ namespace Sort.Algorithms
 
         public override void Run(int[] arr)
         {
-            Sort(arr); 
+            Sort(arr);
+            Display(arr);
         }
 
         public override void Sort(int[] arr)
@@ -37,7 +38,6 @@ namespace Sort.Algorithms
                     }
                 }
             }
-            Display(arr);
         }
     }
 }
