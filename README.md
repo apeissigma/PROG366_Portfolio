@@ -57,7 +57,7 @@ Maps implementing the closed addressing method have buckets with linked lists to
 ## Sorting Algorithms
 
 #### Bubble Sort
-[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/BubbleSort.cs)
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/BubbleSort.cs)\
 Description: An in-place sorting algorithm that iteratively swaps two adjacent values at a time, shrinking the unsorted portion (lower bound) of the set with each pass until the set is sorted. 
 + Best Case: O(n)
 + Worst Case: O(n^2)
@@ -95,35 +95,35 @@ END BubbleSort
 ```
   
 #### Insertion Sort
-[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/InsertionSort.cs)
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/InsertionSort.cs)\
 Description: An in-place sorting algorithm that builds the sorted portion (lower bound) of the set by sorting each element individually. Iteratively, the current index value is INSERTED into its correct position in the sorted portion (lower bound) before increasing the lower bound. 
 + Best Case: O(n)
 + Worst Case: O(n^2)
 ```
 InsertionSort(values[])
 
-		//start at position 1 
-		FOR (i = 1 to n)
-		
-			//get current key's value and the index of it's adjacent value
-			key = values[i]
-			left = i
+    //start at position 1 
+    FOR (i = 1 to n)
+
+        //get current key's value and the index of it's adjacent value
+        key = values[i]
+        left = i
 			
-			//if the key is larger than the adjacent value, swap
-			WHILE (values[left - 1] > key AND left > 0)
-					values[left] = values[left - 1]
-					left--
-			END WHILE
+        //if the key is larger than the adjacent value, swap
+        WHILE (values[left - 1] > key AND left > 0)
+            values[left] = values[left - 1]
+            left--
+        END WHILE
 			
-			//insert key in correct position
-				values[left] = key; 
+        //insert key in correct position
+        values[left] = key; 
 		
-		END FOR
+    END FOR
 END InsertionSort
 ```
 
 #### Selection Sort
-[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/SelectionSort.cs)
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/SelectionSort.cs)\
 Description: An in-place sorting algorithm that iteratively SELECTS the smallest value in the unsorted portion (upper bound) of the set and swaps it with the current index i before increasing the lower bound and iterating further. 
 + Best Case: O(n^2)
 + Worst Case: O(n^2)
@@ -131,17 +131,31 @@ Description: An in-place sorting algorithm that iteratively SELECTS the smallest
 SelectionSort(values[])
 	FOR i = 0 to n - 1
 	
-		//find min value in the range of i...n-1
-				minIndex = i //temp holding value
-				for (j = i + 1 to n)
-						if (values[j] < values[minIndex]) minIndex = j
+        //find min value in the range of i...n-1
+        minIndex = i //temp holding value
+        FOR (j = i + 1 to n)
+            IF (values[j] < values[minIndex])
+                minIndex = j
+            END IF
+        END FOR
 		
 		//swap min with i
-				temp = arr[i] 
-				values[i] = values[min] 
-				values[minIndex] = temp
+        temp = arr[i] 
+        values[i] = values[min] 
+        values[minIndex] = temp
 
-		END FOR
-	END SelectionSort
+    END FOR
+END SelectionSort
 ```
 
+#### Quick Sort
+[Implementation]()\
+Description:
++ Best Case: 
++ Worst Case:
+
+#### Merge Sort
+[Implementation]()\
+Description:
++ Best Case: 
++ Worst Case:
