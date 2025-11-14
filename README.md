@@ -120,7 +120,7 @@ InsertionSort(values[])
         END WHILE
 			
         //insert key in correct position
-        values[left] = key; 
+        values[left] = key
 		
     END FOR
 END InsertionSort
@@ -158,13 +158,77 @@ END SelectionSort
 #### Quick Sort
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/QuickSort.cs)
 
-Description:
-+ Best Case: 
-+ Worst Case:
+Description: A sort-in-place, divide-and-conquer approach where a value is chosen as a pivot, which partitions the set into two subsets (low values and high values relative to the pivot). The subarrays are partitioned and sorted recursively in relation to the pivot until the set is sorted.
++ Best Case: O(n log(n))
++ Worst Case: O(n^2)
+```
+Quicksort(values[], low, high)
+
+	//partition the input set, 
+	//then partition and sort each subset recursively 
+	IF (low < high)
+		pivot = Partition(values[], low, high)
+		QuickSort(values[], low, pivot)
+		Quicksort(value[], pivot + 1, high)
+	END IF
+END QuickSort
+
+Partition(values[], low, high)
+
+	//choose the last value as the partition
+	pivot = A[high]
+	smallIndex = low - 1
+
+	//iteratively swap elements in the subset
+	FOR i = low to high - 1
+		IF (values[i] < pivot)
+			smallIndex++
+			Swap(values[], smallIndex, i)
+		END IF
+	END FOR
+	
+	//swap pivot and return the pivot's new position
+	Swap(values[], smallIndex + 1, high)
+	return smallIndex + 1
+	
+END Partition
+	
+Swap(values[], low, high)
+	temp = values[low]
+	values[low] = values[high]
+	values[high] = temp
+END Swap
+```
 
 #### Merge Sort
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/MergeSort.cs)
 
-Description:
-+ Best Case: 
-+ Worst Case:
+Description: Using the divide and conquer strategy, the algorithm splits the set into two equally-sized subsets, recursively sorts them, and merges the sorted subsets together. 
++ Best Case: O(n log(n))
++ Worst Case: O(n log(n))
+```
+MergeSort(values[], left, right)
+    if (left < right)
+    {
+		    //get middle index value to split the set
+        mid = (left + right) / 2
+        
+        //sort left and right subsets recursively
+        MergeSort(values[], left, mid)
+        MergeSort(values[], mid + 1, right)
+        
+        //merge the sorted subsets back together
+        Merge(values[], left, mid, right)
+    }
+END MergeSort
+
+
+```
+
+#### Heap Sort
+Description: A sort-in-place algorithm that uses a heap data structure to sort the input set. It builds a heap before swapping the first and last items in the heap, rebuilding the heap excluding the last item and adding it to the end of the sorted set. 
++ Best Case: O(n log(n))
++ Worst Case: O(n log(n))
+```
+
+```
