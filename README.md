@@ -134,10 +134,12 @@ Description: An in-place sorting algorithm that iteratively SELECTS the smallest
 + Worst Case: O(n^2)
 ```
 SelectionSort(values[])
+
+	//find minimum value in the range of i...n-1 and swap
 	FOR i = 0 to n - 1
 	
-        //find min value in the range of i...n-1
-        minIndex = i //temp holding value
+		//compare and set the minimum value's index
+        minIndex = i 
         FOR (j = i + 1 to n)
             IF (values[j] < values[minIndex])
                 minIndex = j
