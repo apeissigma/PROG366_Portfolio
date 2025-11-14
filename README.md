@@ -56,10 +56,10 @@ Maps implementing the closed addressing method have buckets with linked lists to
 
 ## Sorting Algorithms
 
-[Demo](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/SortDemo.cs)\\
+[Demo](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/SortDemo.cs)\
 
 #### Bubble Sort
-[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/BubbleSort.cs)\\
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/BubbleSort.cs)\
 Description: An in-place sorting algorithm that iteratively swaps two adjacent values at a time, shrinking the unsorted portion (lower bound) of the set with each pass until the set is sorted. 
 + Best Case: O(n)
 + Worst Case: O(n^2)
@@ -97,7 +97,7 @@ END BubbleSort
 ```
   
 #### Insertion Sort
-[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/InsertionSort.cs)\\
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/InsertionSort.cs)\
 Description: An in-place sorting algorithm that builds the sorted portion (lower bound) of the set by sorting each element individually. Iteratively, the current index value is INSERTED into its correct position in the sorted portion (lower bound) before increasing the lower bound. 
 + Best Case: O(n)
 + Worst Case: O(n^2)
@@ -125,7 +125,7 @@ END InsertionSort
 ```
 
 #### Selection Sort
-[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/SelectionSort.cs)\\
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/SelectionSort.cs)\
 Description: An in-place sorting algorithm that iteratively SELECTS the smallest value in the unsorted portion (upper bound) of the set and swaps it with the current index i before increasing the lower bound and iterating further. 
 + Best Case: O(n^2)
 + Worst Case: O(n^2)
@@ -151,13 +151,13 @@ END SelectionSort
 ```
 
 #### Quick Sort
-[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/QuickSort.cs)\\
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/QuickSort.cs)\
 Description:
 + Best Case: 
 + Worst Case:
 
 #### Merge Sort
-[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/MergeSort.cs)\\
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/MergeSort.cs)\
 Description:
 + Best Case: 
 + Worst Case:
