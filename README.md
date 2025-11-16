@@ -222,6 +222,40 @@ MergeSort(values[], left, right)
     }
 END MergeSort
 
+Merge(values[], left, mid, right)
+		
+		//create a temporary set for the subset
+    new temp[]
+    leftIndex = left
+    rightIndex = mid + 1
+    tempIndex = 0
+
+    //compare and merge values from both halves
+    WHILE (leftIndex <= mid AND rightIndex <= right)
+        IF (values[leftIndex] <= values[rightIndex]) 
+	        temp[tempIndex++] = values[leftIndex++];
+	      END IF
+        ELSE 
+	        temp[tempIndex++] = values[rightIndex++];
+	      END ELSE
+    END WHILE
+
+		//copy remaining values from left half
+    WHILE (leftIndex <= mid)
+        temp[tempIndex++] = values[leftIndex++];
+    END WHILE
+
+		//copy remaining values from right half
+    WHILE (rightIndex <= right)
+        temp[tempIndex++] = values[rightIndex++];
+    END WHILE
+
+		//copy merged values from temp set back to original set
+    FOR (leftIndex = left, tempIndex = 0; leftIndex <= right; leftIndex++, tempIndex++)
+        values[leftIndex] = temp[tempIndex];
+	  END FOR
+	  
+END Merge
 
 ```
 
