@@ -224,7 +224,7 @@ END MergeSort
 
 Merge(values[], left, mid, right)
 		
-		//create a temporary set for the subset
+    //create a temporary set for the subset
     new temp[]
     leftIndex = left
     rightIndex = mid + 1
@@ -240,20 +240,20 @@ Merge(values[], left, mid, right)
 	      END ELSE
     END WHILE
 
-		//copy remaining values from left half
+    //copy remaining values from left half
     WHILE (leftIndex <= mid)
         temp[tempIndex++] = values[leftIndex++];
     END WHILE
 
-		//copy remaining values from right half
+    //copy remaining values from right half
     WHILE (rightIndex <= right)
         temp[tempIndex++] = values[rightIndex++];
     END WHILE
 
-		//copy merged values from temp set back to original set
+    //copy merged values from temp set back to original set
     FOR (leftIndex = left, tempIndex = 0; leftIndex <= right; leftIndex++, tempIndex++)
         values[leftIndex] = temp[tempIndex];
-	  END FOR
+    END FOR
 	  
 END Merge
 
