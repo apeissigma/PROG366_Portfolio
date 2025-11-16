@@ -18,13 +18,13 @@
                 int left = i; //index of value to compare key to
 
                 //as long as the key is smaller than the value to the left
-                //swap with that value
-                while (left > 0 && arr[left - 1] > key) 
+                while (left > 0 && arr[left - 1] > key)
                 {
+                    //swap with that value
                     arr[left] = arr[left - 1];
-                    left--; 
+                    left--;
                 }
-                arr[left] = key; 
+                arr[left] = key; //insert key in correct position 
             }
         }
     }

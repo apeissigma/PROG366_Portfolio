@@ -38,22 +38,21 @@ namespace Sort.Algorithms
                 //check if current element is smaller than the pivot
                 if (arr[i] < pivot)
                 {
-                    smallIndex++; 
-
-                    //swap
-                    int temp = arr[smallIndex];
-                    arr[smallIndex] = arr[i];
-                    arr[i] = temp;
+                    smallIndex++;
+                    Swap(arr, smallIndex, i);
                 }
             }
 
-            //swap pivot
-            int temp2 = arr[smallIndex + 1];
-            arr[smallIndex + 1] = arr[high];
-            arr[high] = temp2; 
-
+            Swap(arr, smallIndex + 1, high); //swap pivot
             return smallIndex + 1; //return the pivot's new position
 
+        }
+
+        public void Swap(int[] arr, int low, int high)
+        {
+            var temp = arr[low]; 
+            arr[low] = arr[high];
+            arr[high] = temp;
         }
     }
 }

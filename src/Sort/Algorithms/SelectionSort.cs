@@ -21,20 +21,20 @@ namespace Sort.Algorithms
             for (int i = 0; i < arr.Length - 1; i++)
             {
                 //find minimum value
-                int min = i;
+                int minIndex = i;
 
                 for (int j = i + 1; j < arr.Length; j++)
                 {
-                    if (arr[j] < arr[min])
+                    if (arr[j] < arr[minIndex])
                     {
-                        min = j;
+                        minIndex = j;
                     }
                 }
 
                 //swap
                 var temp = arr[i];
-                arr[i] = arr[min];
-                arr[min] = temp; 
+                arr[i] = arr[minIndex];
+                arr[minIndex] = temp; 
             }
         }
     }

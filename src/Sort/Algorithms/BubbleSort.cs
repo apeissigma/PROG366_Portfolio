@@ -25,15 +25,21 @@ namespace Sort.Algorithms
 
             while (notSorted)
             {
-                notSorted = false; 
+                //preemptively mark the set as sorted
+                notSorted = false;
+
+                //iterate down the set
                 for (int i = arr.Length - 1; i > 0; i--)
                 {
+                    //compare adjacent values
                     if (arr[i] < arr[i - 1])
                     {
+                        //swap adjacent values
                         var temp = arr[i];
                         arr[i] = arr[i - 1];
                         arr[i - 1] = temp;
 
+                        //since the set was found to be unsorted, mark it as unsorted
                         notSorted = true; 
                     }
                 }
