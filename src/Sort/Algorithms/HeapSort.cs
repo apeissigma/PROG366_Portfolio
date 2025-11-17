@@ -42,7 +42,7 @@ namespace Sort.Algorithms
         {
             int n = heap.Length;
 
-            //for each 
+            //heapify from last non-leaf node to root
             for (int i = n / 2 - 1; i >= 0; i--)
             {
                 Heapify(heap, i, n);
