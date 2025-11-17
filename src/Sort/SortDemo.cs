@@ -15,7 +15,7 @@ namespace Sort
     {
         public int[] Scores; 
         public List<SortingAlgo> Algorithms;
-        public Stopwatch Timer = new Stopwatch(); 
+        public Stopwatch Timer;
 
         public SortDemo()
         {
@@ -29,13 +29,14 @@ namespace Sort
                 new BubbleSort(),
                 new InsertionSort(),
                 new SelectionSort(),
-                 //new HeapSort(),
-                 new QuickSort(),
+                new HeapSort(),
+                new QuickSort(),
                 new MergeSort()
             };
 
             foreach (SortingAlgo algo in Algorithms)
             {
+                Timer = new Stopwatch();
                 Scores = LoadData(); 
                 Timer.Start();
                 algo.Run(Scores);

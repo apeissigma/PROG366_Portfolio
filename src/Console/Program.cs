@@ -3,7 +3,8 @@ using Shuffle;
 using DataStructures.Map;
 using DataStructures.StackQueue;
 using DataStructures.ArtApp;
-using Sort;  
+using Sort;
+using DataStructures.Tree;
 
 namespace PROG366_Portfolio
 {
@@ -12,18 +13,15 @@ namespace PROG366_Portfolio
         static void Main(string[] args)
         {
             SortDemo demo = new SortDemo(); 
-            
-            
-            //ArtCollection collection = new ArtCollection(); ;  
-            
-            
+
             /*
-             * BigODemo bigODemo = new BigODemo(); 
+                BigODemo bigODemo = new BigODemo(); 
                 Forecast forecast = new Forecast();
                 LinkedListDemo llDemo = new LinkedListDemo(); 
                 MapDemo mapDemo = new MapDemo();
                 QueueStackDemo qsDemo = new QueueStackDemo();
             */
+
         }
     }
 }

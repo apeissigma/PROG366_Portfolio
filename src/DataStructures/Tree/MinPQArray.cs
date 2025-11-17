@@ -9,9 +9,11 @@ namespace DataStructures.Tree
     public class MinPQArray<T>
     {
         public PQNode<T>[] tree;
-        int next;
-        int size = 0;
-        int cap = 2; //default cap
+        public int next;
+        public int size = 0;
+        public int cap = 2; //default cap
+        
+
 
         //default constructor
         public MinPQArray() 
@@ -20,12 +22,14 @@ namespace DataStructures.Tree
             next = 1; 
         }
 
+        //constructor taking a size argument
         public MinPQArray(int n)
         {
             tree = new PQNode<T>[n];
             next = 1;
         }
 
+        //add
         public void Enqueue(int key, T element) 
         {
             //if tree is too small, resize
@@ -43,10 +47,12 @@ namespace DataStructures.Tree
         //removes the min/root value
         public void Dequeue() { }
 
+        //get the root
         public T Peek()
         {
             return this.tree[0].value; 
         }
+
 
         public void Swim(int index) 
         {
@@ -59,8 +65,13 @@ namespace DataStructures.Tree
             //while parent node 
         }
 
-        public void Sink() { }
 
+        public void Sink() 
+        { 
+            
+        }
+
+        //double the size of the tree 
         public void Resize() 
         {
             cap = cap * 2; 
