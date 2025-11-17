@@ -260,6 +260,8 @@ END Merge
 ```
 
 #### Heap Sort
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/HeapSort.cs)
+
 Description: A sort-in-place algorithm that uses a heap data structure to sort the input set. It builds a heap before swapping the first and last items in the heap, rebuilding the heap excluding the last item and adding it to the end of the sorted set. 
 + Best Case: O(n log(n))
 + Worst Case: O(n log(n))
