@@ -58,7 +58,7 @@ Maps implementing the closed addressing method have buckets with linked lists to
 
 [Demo](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/SortDemo.cs)
 
-#### Bubble Sort
+### Bubble Sort
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/BubbleSort.cs)
 
 Description: An in-place sorting algorithm that iteratively swaps two adjacent values at a time, shrinking the unsorted portion (lower bound) of the set with each pass until the set is sorted. 
@@ -97,7 +97,7 @@ BubbleSort(values[])
 END BubbleSort
 ```
   
-#### Insertion Sort
+### Insertion Sort
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/InsertionSort.cs)
 
 Description: An in-place sorting algorithm that builds the sorted portion (lower bound) of the set by sorting each element individually. Iteratively, the current index value is INSERTED into its correct position in the sorted portion (lower bound) before increasing the lower bound. 
@@ -126,7 +126,7 @@ InsertionSort(values[])
 END InsertionSort
 ```
 
-#### Selection Sort
+### Selection Sort
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/SelectionSort.cs)
 
 Description: An in-place sorting algorithm that iteratively SELECTS the smallest value in the unsorted portion (upper bound) of the set and swaps it with the current index i before increasing the lower bound and iterating further. 
@@ -155,7 +155,7 @@ SelectionSort(values[])
 END SelectionSort
 ```
 
-#### Quick Sort
+### Quick Sort
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/QuickSort.cs)
 
 Description: A sort-in-place, divide-and-conquer approach where a value is chosen as a pivot, which partitions the set into two subsets (low values and high values relative to the pivot). The subarrays are partitioned and sorted recursively in relation to the pivot until the set is sorted.
@@ -200,7 +200,7 @@ Swap(values[], low, high)
 END Swap
 ```
 
-#### Merge Sort
+### Merge Sort
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/MergeSort.cs)
 
 Description: Using the divide and conquer strategy, the algorithm splits the set into two equally-sized subsets, recursively sorts them, and merges the sorted subsets together. 
@@ -259,7 +259,7 @@ END Merge
 
 ```
 
-#### Heap Sort
+### Heap Sort
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/HeapSort.cs)
 
 Description: A sort-in-place algorithm that uses a heap data structure to sort the input set. It builds a heap before swapping the first and last items in the heap, rebuilding the heap excluding the last item and adding it to the end of the sorted set. 
