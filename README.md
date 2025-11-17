@@ -264,5 +264,50 @@ Description: A sort-in-place algorithm that uses a heap data structure to sort t
 + Best Case: O(n log(n))
 + Worst Case: O(n log(n))
 ```
+Heapsort(array arr)
 
+    //build initial unsorted heap
+	BuildMaxHeap(arr)
+
+		//sort 
+		FOR i = n - 1 to 0
+			Swap(0, i)
+			 Heapify(heap, 0, i)
+			i--
+		END FOR
+	END BuildMaxHeap
+END HeapSort
+
+//builds the initial heap
+BuildMaxHeap(array arr)
+
+	//heapify from last non-leaf node to root
+	FOR i = n/2 - 1 to 0
+		Heapify(arr, i, n)
+		i--
+	END FOR
+END BuildMaxHeap
+
+//maintains heap structure
+Heapify(array arr, int i, int n)
+	left = 2i + 1
+	right = 2i + 2
+	max = val
+	
+	//if left node is larger than maximum node, set new max
+	IF (left < n) AND (arr[left] > arr[max])
+		max = left
+	END IF
+
+	//if right node is larger than maximum node, set new max
+	IF (right < n) AND (arr[right) > arr[max])
+		max = right
+	END IF
+	
+	//if the value is no longer the largest max, swap and re-heapify
+	IF (max != i)
+		swap(i, max)
+		Heapify(arr, max, n)
+	END IF
+END Heapify
 ```
