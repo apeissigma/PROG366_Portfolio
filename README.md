@@ -53,3 +53,216 @@ Maps are abstract data structures that implement an associative array which maps
 Open addressed maps have elements stored in the hash table itself, with one element per index. The map is probed in a linear sequence in order to insert, find, and delete elements.
 ##### Closed Addressing (Chaining Map)
 Maps implementing the closed addressing method have buckets with linked lists to store elements. New elements with the same index are added to the end of the list. 
+
+## Sorting Algorithms
+
+[Demo](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/SortDemo.cs)
+
+#### Bubble Sort
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/BubbleSort.cs)
+
+Description: An in-place sorting algorithm that iteratively swaps two adjacent values at a time, shrinking the unsorted portion (lower bound) of the set with each pass until the set is sorted. 
++ Best Case: O(n)
++ Worst Case: O(n^2)
+```
+BubbleSort(values[])
+	
+	Bool: notSorted = true
+	
+	WHILE (notSorted)
+			
+			//preemptively mark the set as sorted
+				notSorted = false
+			
+			//iterate down the set
+			FOR(i = n - 1 to 0)
+			
+				//compare adjacent values
+					IF (values[i] < values[i - 1])
+					
+					//swap adjacent values
+						temp = values[i];
+						values[i] = values[i - 1];
+						values[i - 1] = temp; 
+					
+					//since the set was found to be unsorted, mark it as unsorted
+						notSorted = true; 
+					
+					//decrease the lower bound
+						i--
+					
+					END IF
+			END FOR
+	END WHILE
+END BubbleSort
+```
+  
+#### Insertion Sort
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/InsertionSort.cs)
+
+Description: An in-place sorting algorithm that builds the sorted portion (lower bound) of the set by sorting each element individually. Iteratively, the current index value is INSERTED into its correct position in the sorted portion (lower bound) before increasing the lower bound. 
++ Best Case: O(n)
++ Worst Case: O(n^2)
+```
+InsertionSort(values[])
+
+    //start at position 1 
+    FOR (i = 1 to n)
+
+        //get current key's value and the index of it's adjacent value
+        key = values[i]
+        left = i
+			
+        //if the key is larger than the adjacent value, swap
+        WHILE (values[left - 1] > key AND left > 0)
+            values[left] = values[left - 1]
+            left--
+        END WHILE
+			
+        //insert key in correct position
+        values[left] = key
+		
+    END FOR
+END InsertionSort
+```
+
+#### Selection Sort
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/SelectionSort.cs)
+
+Description: An in-place sorting algorithm that iteratively SELECTS the smallest value in the unsorted portion (upper bound) of the set and swaps it with the current index i before increasing the lower bound and iterating further. 
++ Best Case: O(n^2)
++ Worst Case: O(n^2)
+```
+SelectionSort(values[])
+
+	//find minimum value in the range of i...n-1 and swap
+	FOR i = 0 to n - 1
+	
+		//compare and set the minimum value's index
+        minIndex = i 
+        FOR (j = i + 1 to n)
+            IF (values[j] < values[minIndex])
+                minIndex = j
+            END IF
+        END FOR
+		
+		//swap min with i
+        temp = arr[i] 
+        values[i] = values[min] 
+        values[minIndex] = temp
+
+    END FOR
+END SelectionSort
+```
+
+#### Quick Sort
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/QuickSort.cs)
+
+Description: A sort-in-place, divide-and-conquer approach where a value is chosen as a pivot, which partitions the set into two subsets (low values and high values relative to the pivot). The subarrays are partitioned and sorted recursively in relation to the pivot until the set is sorted.
++ Best Case: O(n log(n))
++ Worst Case: O(n^2)
+```
+Quicksort(values[], low, high)
+
+	//partition the input set, 
+	//then partition and sort each subset recursively 
+	IF (low < high)
+		pivot = Partition(values[], low, high)
+		QuickSort(values[], low, pivot)
+		Quicksort(value[], pivot + 1, high)
+	END IF
+END QuickSort
+
+Partition(values[], low, high)
+
+	//choose the last value as the partition
+	pivot = A[high]
+	smallIndex = low - 1
+
+	//iteratively swap elements in the subset
+	FOR i = low to high - 1
+		IF (values[i] < pivot)
+			smallIndex++
+			Swap(values[], smallIndex, i)
+		END IF
+	END FOR
+	
+	//swap pivot and return the pivot's new position
+	Swap(values[], smallIndex + 1, high)
+	return smallIndex + 1
+	
+END Partition
+	
+Swap(values[], low, high)
+	temp = values[low]
+	values[low] = values[high]
+	values[high] = temp
+END Swap
+```
+
+#### Merge Sort
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Sort/Algorithms/MergeSort.cs)
+
+Description: Using the divide and conquer strategy, the algorithm splits the set into two equally-sized subsets, recursively sorts them, and merges the sorted subsets together. 
++ Best Case: O(n log(n))
++ Worst Case: O(n log(n))
+```
+MergeSort(values[], left, right)
+    if (left < right)
+    {
+		    //get middle index value to split the set
+        mid = (left + right) / 2
+        
+        //sort left and right subsets recursively
+        MergeSort(values[], left, mid)
+        MergeSort(values[], mid + 1, right)
+        
+        //merge the sorted subsets back together
+        Merge(values[], left, mid, right)
+    }
+END MergeSort
+
+Merge(values[], left, mid, right)
+		
+    //create a temporary set for the subset
+    new temp[]
+    leftIndex = left
+    rightIndex = mid + 1
+    tempIndex = 0
+
+    //compare and merge values from both halves
+    WHILE (leftIndex <= mid AND rightIndex <= right)
+        IF (values[leftIndex] <= values[rightIndex]) 
+	        temp[tempIndex++] = values[leftIndex++];
+	      END IF
+        ELSE 
+	        temp[tempIndex++] = values[rightIndex++];
+	      END ELSE
+    END WHILE
+
+    //copy remaining values from left half
+    WHILE (leftIndex <= mid)
+        temp[tempIndex++] = values[leftIndex++];
+    END WHILE
+
+    //copy remaining values from right half
+    WHILE (rightIndex <= right)
+        temp[tempIndex++] = values[rightIndex++];
+    END WHILE
+
+    //copy merged values from temp set back to original set
+    FOR (leftIndex = left, tempIndex = 0; leftIndex <= right; leftIndex++, tempIndex++)
+        values[leftIndex] = temp[tempIndex];
+    END FOR
+	  
+END Merge
+
+```
+
+#### Heap Sort
+Description: A sort-in-place algorithm that uses a heap data structure to sort the input set. It builds a heap before swapping the first and last items in the heap, rebuilding the heap excluding the last item and adding it to the end of the sorted set. 
++ Best Case: O(n log(n))
++ Worst Case: O(n log(n))
+```
+
+```
