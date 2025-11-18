@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Tree
 {
-    public class PQNode<T>
+    public class PQNode
     {
         public int key; 
-        public T value; 
+        public int value; 
 
-        public PQNode(int key, T value)
+        public PQNode(int key, int value)
         {
             this.key = key;
             this.value = value;
