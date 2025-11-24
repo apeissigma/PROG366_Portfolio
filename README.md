@@ -1,6 +1,6 @@
 # PROG366 Portfolio
 Ashani Li Peissigma
-Last updated: 11/2/2025
+Last updated: 11/23/2025
 
 ## Big O Notation
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/tree/main/src/BigO)
@@ -312,4 +312,72 @@ Heapify(array arr, int i, int n)
 		Heapify(arr, max, n)
 	END IF
 END Heapify
+```
+
+## Searching Algorithms
+
+### Linear Sort
+[Implementation]()
+
+Description: A simple searching algorithm that sequentially checks each value of a dataset. Works best on very small datasets. 
++ Best Case: O(1)
++ Worst Case: O(n)
+```
+LinearSearch(array, target)
+	FOR i = 0 to n
+		IF array[i] = target, return i
+	END FOR
+    return -1
+END LinearSearch
+```
+
+### Binary Sort
+[Implementation]()
+
+Description: Requiring a sorted dataset, the algorithm compares the value in the middle of the dataset to the target value. If the values are equal, the target has been found, otherwise the algorithm splits the dataset and recursively searches with the remaining half containing the target.
++ Best Case: O(1)
++ Worst Case: O(log n)
+```
+BinarySearch(array, low, high, target)
+ 
+ WHILE (low <= high)
+ 
+	 mid = (high + low) / 2
+	 
+	 IF (array[mid] == target), return mid
+	 IF ELSE (array[mid] < target), BinarySearch(array, mid + 1, high, target)
+	 ELSE high = BinarySearch(array, low, mid - 1, target)
+	 
+ END WHILE
+ 
+	 return -1
+
+END BinarySearch
+```
+
+### Interpolation Sort
+[Implementation]()
+
+Description: An improvement over Binary Search for sorted datasets with uniformly distributed values. Calculates a key/probe based on the upper and lower bounds of the dataset, adjusting the searchable area of the dataset and recalculating the probe until the value is found. 
+The formula to calculate the probe is as followed, where "x" is the target: $$lo + [ (hi - lo) * (x - arr[lo]) / (arr[hi] - arr[lo]) ]$$
++ Best Case: O (log (log (n))
++ Worst Case: O(n)
+```
+InterpolationSearch(array, target)
+	high = n - 1
+	low = 0
+	
+	WHILE (target >= array[low] && target <= array[high] && low <= high)
+		
+		prob = low + ((high - low) * (target - array[low]) / (array[high] - array[low]))
+		
+		IF (array[probe] = target, return probe
+		IF (array[probe] < target, low = probe + 1
+		ELSE high = probe + 1
+		
+	END WHILE
+	
+	return -1
+
+END InterpolationSearch
 ```
