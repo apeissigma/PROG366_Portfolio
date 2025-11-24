@@ -346,7 +346,7 @@ BinarySearch(array, low, high, target)
 	 
 	 IF (array[mid] == target), return mid
 	 IF ELSE (array[mid] < target), BinarySearch(array, mid + 1, high, target)
-	 ELSE high = BinarySearch(array, low, mid - 1, target)
+	 ELSE BinarySearch(array, low, mid - 1, target)
 	 
  END WHILE
  
