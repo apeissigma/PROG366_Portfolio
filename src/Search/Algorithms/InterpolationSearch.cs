@@ -12,7 +12,7 @@ public class InterpolationSearch : SearchingAlgo
         Console.WriteLine($"Target {arr[tIndex]} found at index {tIndex}");
     }
 
-    public int Search(int[] arr, int target)
+    public int Search(int[] arr, int target) 
     {
         //set initial high and low values
         int high = arr.Length - 1;

@@ -19,7 +19,7 @@ public class BinarySearch : SearchingAlgo
     public int Search(int[] arr, int low, int high, int target)
     {
         //continue recursion as long as lower bound is less than higher bound
-        if (low <= high)
+        if (low <= high) 
         {
             //calculate mid index
             int mid = (high + low) / 2;

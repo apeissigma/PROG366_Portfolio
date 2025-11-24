@@ -11,7 +11,7 @@ public class SearchDemo
     public Stopwatch Timer;
     public int target = 22;
 
-    public SearchDemo()
+    public SearchDemo() 
     {
         RunAllSearches();
     }

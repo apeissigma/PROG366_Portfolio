@@ -6,7 +6,7 @@ public class LinearSearch : SearchingAlgo
 
     public override void Run(int[] arr, int target)
     {
-        Display();
+        Display(); 
         Console.WriteLine($"Target: {target}");
         var tIndex = Search(arr, target); 
         Console.WriteLine($"Target {arr[tIndex]} found at index {tIndex}");

@@ -14,7 +14,7 @@ namespace Search.Algorithms
 
         public virtual void Search(int[] arr, int target) { }
 
-        public void Display()
+        public void Display() 
         {
             Console.WriteLine("========== " + this.Name + " ========== ");
         }
