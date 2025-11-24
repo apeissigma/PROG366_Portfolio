@@ -5,6 +5,7 @@ using DataStructures.StackQueue;
 using DataStructures.ArtApp;
 using Sort;
 using DataStructures.Tree;
+using Search;
 
 namespace PROG366_Portfolio
 {
@@ -12,7 +13,9 @@ namespace PROG366_Portfolio
     {
         static void Main(string[] args)
         {
-            SortDemo demo = new SortDemo(); 
+            SearchDemo demo = new SearchDemo(); 
+
+            //SortDemo demo = new SortDemo(); 
 
             /*
                 BigODemo bigODemo = new BigODemo(); 
