@@ -317,7 +317,7 @@ END Heapify
 ## Searching Algorithms
 
 ### Linear Sort
-[Implementation]()
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Search/Algorithms/LinearSearch.cs)
 
 Description: A simple searching algorithm that sequentially checks each value of a dataset. Works best on very small datasets. 
 + Best Case: O(1)
@@ -332,7 +332,7 @@ END LinearSearch
 ```
 
 ### Binary Sort
-[Implementation]()
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Search/Algorithms/BinarySearch.cs)
 
 Description: Requiring a sorted dataset, the algorithm compares the value in the middle of the dataset to the target value. If the values are equal, the target has been found, otherwise the algorithm splits the dataset and recursively searches with the remaining half containing the target.
 + Best Case: O(1)
@@ -356,7 +356,7 @@ END BinarySearch
 ```
 
 ### Interpolation Sort
-[Implementation]()
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/Search/Algorithms/InterpolationSearch.cs)
 
 Description: An improvement over Binary Search for sorted datasets with uniformly distributed values. Calculates a key/probe based on the upper and lower bounds of the dataset, adjusting the searchable area of the dataset and recalculating the probe until the value is found. 
 The formula to calculate the probe is as followed, where "x" is the target: $$lo + [ (hi - lo) * (x - arr[lo]) / (arr[hi] - arr[lo]) ]$$
