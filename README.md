@@ -27,6 +27,35 @@ Linked lists are linear data structures that organize elements (nodes) in sequen
 + Linked lists are fast and flexible to use, but must be traversed linearly and use more storage in memory.
 + Traditional linked lists are traversed forwards, while doubly linked lists can be traversed forwards and backwards due to nodes having references to both the next and previous nodes.
 
+### Arrays & Maps
+[Arrays & Maps Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/DataStructures/Map/MapVsArrayDemo.cs)
+[Linear & Chaining Map Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/DataStructures/Map/MapDemo.cs)
+
+#### Arrays
+Arrays are linear, concrete data structures that store a sequence of elements of the same type.
++ Elements are indexed, and array indexes are 0-based.
++ Arrays are fixed size, and must be resized in order to add more elements.
+Choose an array over a map when...
++ Associated values aren't necessary
++ Storing ordered, index-based data
++ Needing to prioritize memory efficiency
+#### Maps
+Maps are abstract data structures that implement an associative array which maps keys to values. 
++ More specifically, hashmaps involve a hashing function that generates unique keys to index elements.
++ Maps are non-sequential, and do not store elements in a particular order.
+C# has two built in map types, both with the same functionality:
++ Hashtable: a non-generic collection of key/value pairs that returns object types.
++ Dictionary: a generic collection of key/value pairs with better performance than hashtables.
+Choose a map over an array when...
++ Implementing complex keys such as hashes
++ Needing to access an element by its key rather than its index
++ Storing irregular or non-sequential data
+
+##### Open Addressing (Linear Map)
+Open addressed maps have elements stored in the hash table itself, with one element per index. The map is probed in a linear sequence in order to insert, find, and delete elements.
+##### Closed Addressing (Chaining Map)
+Maps implementing the closed addressing method have buckets with linked lists to store elements. New elements with the same index are added to the end of the list. 
+
 ### Stacks & Queues
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/DataStructures/StackQueue/QueueStackDemo.cs)
 
@@ -34,25 +63,15 @@ Linked lists are linear data structures that organize elements (nodes) in sequen
 #### Stacks
 Stacks are data structures that store elements in a last-in, first-out (LIFO) order.
 + Elements are pushed (inserted) and popped (removed) from the front of the list.
+Choose a queue over a stack when...
++ Processing data in reverse order, like executing undo operations
++ Managing context
 #### Queues
 Queues are data structures that store elements in a first-in, first-out (FIFO) order.  
 + Elements are enqueued (inserted) at the end of the list and popped (removed) from the front of the list.
-
-### Arrays & Maps
-[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/DataStructures/Map/MapDemo.cs)
-
-#### Arrays
-Arrays are linear, concrete data structures that store a sequence of elements of the same type.
-+ Elements are indexed, and array indexes are 0-based.
-+ Arrays are fixed size, and must be resized in order to add more elements. 
-#### Maps
-Maps are abstract data structures that implement an associative array which maps keys to values. 
-+ More specifically, hashmaps involve a hashing function that generates unique keys to index elements.
-+ Maps are non-sequential, and do not store elements in a particular order.
-##### Open Addressing (Linear Map)
-Open addressed maps have elements stored in the hash table itself, with one element per index. The map is probed in a linear sequence in order to insert, find, and delete elements.
-##### Closed Addressing (Chaining Map)
-Maps implementing the closed addressing method have buckets with linked lists to store elements. New elements with the same index are added to the end of the list. 
+Choose a queue over a stack when...
++ Handling data in the order it arrives, like messages or print jobs
++ Preserving sequences
 
 ## Sorting Algorithms
 
