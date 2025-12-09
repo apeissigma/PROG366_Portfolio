@@ -1,6 +1,14 @@
 # PROG366 Portfolio
 Ashani Li Peissigma
-Last updated: 11/23/2025
+Last updated: 12//2025
+
+## Contents
+1. [Big O Notation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#big-o-notation)
+2. [The Fisher-Yates Shuffle](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#the-fisher-yates-shuffle)
+3. [Data Structures](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#the-fisher-yates-shuffle)
+4. [Sorting Algorithms](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#the-fisher-yates-shuffle)
+5. [Searching Algorithms](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#the-fisher-yates-shuffle)
+6. [Trees]()
 
 ## Big O Notation
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/tree/main/src/BigO)
