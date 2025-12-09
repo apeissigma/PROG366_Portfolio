@@ -49,7 +49,7 @@ namespace PROG366_Portfolio
                         break;
                     case 3:
                         MapVsArrayDemo maDemo = new MapVsArrayDemo(); 
-                        QueueStackDemo qsDemo = new QueueStackDemo();
+                        StackVsQueueDemo qsDemo = new StackVsQueueDemo();
                         break;
                     case 4:
                         MapDemo mapDemo = new MapDemo(); //not working, fix 

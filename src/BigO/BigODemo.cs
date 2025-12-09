@@ -12,6 +12,8 @@ namespace BigO
 
         public BigODemo() 
         {
+            Console.WriteLine("\n========================= Big O Notation Demo =========================");
+
             Console.WriteLine("--- Constant Time O(1) ---");
             Console.WriteLine("This function takes a integer as an input and checks if it's an even number.");
             Console.WriteLine("As long as the input is less than the maximum integer size (~2,000,000), the function will take the same amount of time.");

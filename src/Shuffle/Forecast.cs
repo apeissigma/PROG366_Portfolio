@@ -20,7 +20,7 @@ namespace Shuffle
 
         public void Go()
         {
-            Console.WriteLine("\n===== Mini Tarot (Fisher-Yates Implementation) =====");
+            Console.WriteLine("\n========================= Mini Tarot (Fisher-Yates Implementation) =========================");
             Console.WriteLine("Your tarot card for today:");
             cards.Shuffle(cards.cards);
             ShowCard(cards.cards[0]);

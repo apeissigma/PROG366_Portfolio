@@ -19,6 +19,8 @@ namespace Sort
 
         public SortDemo()
         {
+            Console.WriteLine("========================= Sorting Algorithm Demo =========================");
+            Console.WriteLine("*** See README.md for explainations and pseudocode ***\n");
             RunAllSorts(); 
         }
 

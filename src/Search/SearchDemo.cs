@@ -13,6 +13,8 @@ public class SearchDemo
 
     public SearchDemo() 
     {
+        Console.WriteLine("========================= Searching Algorithm Demo =========================");
+        Console.WriteLine("*** See README.md for explainations and pseudocode ***\n");
         RunAllSearches();
     }
 

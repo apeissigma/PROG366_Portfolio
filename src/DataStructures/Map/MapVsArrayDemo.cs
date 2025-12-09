@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataStructures.StackQueue;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,90 +11,97 @@ namespace DataStructures.Map
 {
     public class MapVsArrayDemo
     {
+        string filePath = $"..\\..\\..\\..\\DataStructures\\Data\\DataStructuresData.txt";
+
         public MapVsArrayDemo()
         {
-            Console.WriteLine("\n=============== Maps Vs Arrays ===============");
+            Console.WriteLine("\n========================= Maps Vs Arrays =========================");
+            Console.WriteLine("*** See README.md for data structure information and comparisons ***");
 
             Console.WriteLine("\n---------- Map Implementation ----------");
-            Console.WriteLine("Maps are abstract data structures that implement an associative array which maps keys to values.");
-            Console.WriteLine(" > More specifically, hashmaps involve a hashing function that generates unique keys to index elements.");
-            Console.WriteLine(" > Maps are non-sequential, and do not store elements in a particular order.");
-            Console.WriteLine("Choose a map over an array when...");
-            Console.WriteLine(" > Needing to access an element by it's key rather than it's index");
-            Console.WriteLine(" > Storing irregular or non-sequential data");
-            Console.WriteLine("C# has two built in map types, both with the same functionality:");
-            Console.WriteLine(" > Hashtable: a non-generic collection of key/value pairs that returns object types.");
-            Console.WriteLine(" > Dictionary: a generic collection of key/value pairs with better performance than hashtables.");
-            MapDemo();
+            HashtableDemo();
+            DictionaryDemo(); 
 
             Console.WriteLine("\n---------- Array Implementation ----------");
-            Console.WriteLine("Arrays are linear, concrete data structures that store a sequence of elements of the same type.");
-            Console.WriteLine(" > Elements are indexed, and array indexes are 0-based.");
-            Console.WriteLine(" > Arrays are fixed size, and must be resized in order to add more elements.");
-            Console.WriteLine("Choose an array over a map when...");
-            Console.WriteLine(" > Associated values aren't necessary");
-            Console.WriteLine(" > Storing ordered, index-based data");
-            Console.WriteLine(" > Needing to prioritize memory efficiency");
             ArrayDemo(); 
         }
 
-        public void MapDemo()
+        private void HashtableDemo()
         {
             Console.WriteLine("\n~~~~~ Hashtable Demo ~~~~~");
             Hashtable htable = new Hashtable();
 
-            Console.WriteLine("Adding [1, 'This'], [2, 'Is'], [3, 'A'], [4, 'Hashtable']");
-            htable.Add(1, "This");
-            htable.Add(2, "Is");
-            htable.Add(3, "A");
-            htable.Add(4, "Hashtable");
+            Console.WriteLine("Adding Data (values 1-501)");
+            var data = File.ReadAllLines(filePath);
+            int i = 1;
+            foreach (var line in data)
+            {
+                htable.Add(i, Int32.Parse(line));
+                i++;
+            }
 
-            Console.Write($"\nFind the last value via it's key (4): {htable[4]}");
+            Console.Write($"\nFind the first value via it's key (1): {htable[1]}");
+            Console.Write($"\nFind the last value via it's key (500): {htable[500]}");
 
-            Console.Write("\nReassign the last value via it's key (4): ");
-            htable[4] = "Hash-what?";
-            Console.WriteLine(htable[4]);
+            Console.Write("\nReassign the last value via it's key (500): ");
+            htable[500] = "Hey!";
+            Console.WriteLine(htable[500]);
 
-            Console.WriteLine("\nLoop through each key/value pair:");
-            foreach (DictionaryEntry kv in htable) Console.WriteLine($" > {kv.Key} {kv.Value}");
+            Console.WriteLine("\nLoop through the first 5 key/value pairs:"); //demonstrates how values are retrieved
+            int j = 0;
+            foreach (DictionaryEntry kv in htable)
+            {
+                if (j == 5) break;
+                Console.WriteLine($" > [ {kv.Key}, {kv.Value} ]");
+                j++;
+            }
+        }
 
-
-
-
+        private void DictionaryDemo()
+        {
             Console.WriteLine("\n~~~~~ Dictionary Demo ~~~~~");
             Dictionary<int, string> dict = new Dictionary<int, string>();
 
-            Console.WriteLine("Adding [1, 'This'], [2, 'Is'], [3, 'A'], [4, 'Dictionary']");
-            dict.Add(1, "This");
-            dict.Add(2, "Is");
-            dict.Add(3, "A");
-            dict.Add(4, "Dictionary");
+            Console.WriteLine("Adding Data (values 1-501)");
+            var data = File.ReadAllLines(filePath);
+            int i = 1;
+            foreach (var line in data)
+            {
+                dict.Add(i, line);
+                i++;
+            }
 
-            Console.Write($"\nFind the last value via it's key (4): {dict[4]}");
+            Console.Write($"\nFind the first value via it's key (1): {dict[1]}");
+            Console.Write($"\nFind the last value via it's key (500): {dict[500]}");
 
-            Console.Write("\nReassign the last value via it's key (4): ");
-            dict[4] = "Dictiona-what?";
-            Console.WriteLine(dict[4]);
+            Console.Write("\nReassign the first value via it's key (1): ");
+            dict[1] = "Hey!";
+            Console.WriteLine(dict[1]);
 
-            Console.WriteLine("\nLoop through each key/value pair:");
-            foreach (KeyValuePair<int, string> kv in dict) Console.WriteLine($" > {kv.Key} {kv.Value}");
+            Console.WriteLine("\nLoop through the first 5 key/value pairs:"); //demonstrates how values are retrieved
+            int j = 0;
+            foreach (KeyValuePair<int, string> kv in dict)
+            {
+                if (j == 5) break;
+                Console.WriteLine($" > [ {kv.Key}, {kv.Value} ]");
+                j++;
+            }
         }
 
-        public void ArrayDemo()
+        private void ArrayDemo()
         {
-            Console.WriteLine("\n~~~~~ Array Demo ~~~~~");
+            Console.WriteLine("Initializing Array with Data (values 1-501)");
+            int[] arr = File.ReadAllLines(filePath).Select(int.Parse).ToArray();
 
-            Console.WriteLine("Creating an array of 4 values: 'This', 'Is', 'An', 'Array'");
-            string[] arr = new string[4] { "This", "Is", "An", "Array" };
+            int firstIndex = 0;
+            int lastIndex = arr.Length - 1; 
 
-            Console.Write($"\nFind the last value via it's index (3): {arr[3]}");
+            Console.Write($"\nFind the first value via it's index (0): {arr[firstIndex]}");
+            Console.Write($"\nFind the last value via it's index (500): {arr[lastIndex]}");
 
-            Console.Write("\nReassign the last value via it's index (3): ");
-            arr[3] = "Arr-what?";
-            Console.WriteLine(arr[3]);
-
-            Console.WriteLine("\nLoop through each index and value:");
-            for (int i = 0; i < arr.Length; i++) Console.WriteLine($" > {i} {arr[i]}");
+            Console.Write("\nReassign the last value via it's index (500): ");
+            arr[lastIndex] = 1000;
+            Console.WriteLine(arr[lastIndex]);
         }
     }
 }
