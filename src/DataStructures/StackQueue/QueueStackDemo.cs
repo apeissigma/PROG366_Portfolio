@@ -11,9 +11,22 @@ namespace DataStructures.StackQueue
     {
         public QueueStackDemo()
         {
+            Console.WriteLine("\n=============== Queues Vs Stacks ===============");
+
             Console.WriteLine("\n===== Queue Implementation =====");
+            Console.WriteLine("Stacks are data structures that store elements in a last-in, first-out (LIFO) order.");
+            Console.WriteLine(" > Elements are pushed (inserted) and popped (removed) from the front of the list.");
+            Console.WriteLine("Choose a queue over a stack when...");
+            Console.WriteLine(" > Handling data in the order it arrives, like messages or print jobs");
+            Console.WriteLine(" > Preserving sequences");
             QueueDemo();
-            Console.WriteLine("\n===== Queue Implementation =====");
+
+            Console.WriteLine("\n===== Stack Implementation =====");
+            Console.WriteLine("Queues are data structures that store elements in a first-in, first-out (FIFO) order.");
+            Console.WriteLine("> Elements are enqueued (inserted) at the end of the list and popped (removed) from the front of the list.");
+            Console.WriteLine("Choose a queue over a stack when...");
+            Console.WriteLine(" > Processing data in reverse order, like executing undo operations");
+            Console.WriteLine(" > Managing context");
             StackDemo();
         }
 
