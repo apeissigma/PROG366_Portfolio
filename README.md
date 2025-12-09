@@ -5,9 +5,9 @@ Last updated: 12//2025
 ## Contents
 1. [Big O Notation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#big-o-notation)
 2. [The Fisher-Yates Shuffle](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#the-fisher-yates-shuffle)
-3. [Data Structures](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#the-fisher-yates-shuffle)
-4. [Sorting Algorithms](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#the-fisher-yates-shuffle)
-5. [Searching Algorithms](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#the-fisher-yates-shuffle)
+3. [Data Structures](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#data-structures)
+4. [Sorting Algorithms](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#sorting-algorithms)
+5. [Searching Algorithms](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#searching-algorithms)
 6. [Trees]()
 
 ## Big O Notation
