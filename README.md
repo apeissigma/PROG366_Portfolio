@@ -8,7 +8,7 @@ Last updated: 12//2025
 3. [Data Structures](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#data-structures)
 4. [Sorting Algorithms](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#sorting-algorithms)
 5. [Searching Algorithms](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#searching-algorithms)
-6. [Trees]()
+6. [Tree Structures](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#tree-structures)
 
 ## Big O Notation
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/tree/main/src/BigO)
@@ -413,3 +413,5 @@ InterpolationSearch(array, target)
 
 END InterpolationSearch
 ```
+
+## Tree Structures
