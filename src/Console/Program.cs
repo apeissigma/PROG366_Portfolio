@@ -1,6 +1,7 @@
 ﻿using BigO;
-using DataStructures;
 using DataStructures.ArtApp;
+using DataStructures.Graph;
+using DataStructures.LinkedList;
 using DataStructures.Map;
 using DataStructures.StackQueue;
 using DataStructures.Tree;
@@ -23,12 +24,13 @@ namespace PROG366_Portfolio
                 Console.WriteLine("> 1:  Big O Notation Demo");
                 Console.WriteLine("> 2:  Fisher-Yates Shuffle Application");
                 Console.WriteLine("> 3:  Data Structures (Maps & Arrays, Stacks & Queues)");
-                Console.WriteLine("> 4:  Hash Map Demo");
+                Console.WriteLine("> 4:  Hash Map Demo (Chaining & Linear Hash Maps)");
                 Console.WriteLine("> 5:  Linked List Demo");
                 Console.WriteLine("> 6:  Sorting Application");
                 Console.WriteLine("> 7:  Searching Application");
-                Console.WriteLine("> 8:  Tree Strctures Demo");
-                Console.WriteLine("> 9:  Quit");
+                Console.WriteLine("> 8:  Tree Structures Demo");
+                Console.WriteLine("> 9:  Graph Demo");
+                Console.WriteLine("> 10:  Quit");
 
                 Console.Write("\nSelect a project to run: ");
                 string choiceStr = Console.ReadLine().Trim();
@@ -64,8 +66,12 @@ namespace PROG366_Portfolio
                         SearchDemo searchDemo = new SearchDemo();
                         break;
                     case 8:
+                        RedBlackBSTDemo treeDemo = new RedBlackBSTDemo(); //not implemented
                         break;
                     case 9:
+                        GraphDemo graphDemo = new GraphDemo(); //not implemented
+                        break;
+                    case 10:
                         choosing = false;
                         //exit application
                         break;

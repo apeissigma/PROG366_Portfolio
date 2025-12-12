@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataStructures
+namespace DataStructures.Tree
 {
-    public class Node<T>
+    public class RedBlackBSTDemo
     {
-        public T Value { get; set; }
-        public Node<T> Next { get; set; }
     }
 }

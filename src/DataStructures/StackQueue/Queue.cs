@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataStructures.LinkedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,11 @@ namespace DataStructures.StackQueue
 {
     public class Queue<T>
     {
-        public LinkedList<T> arr; 
+        public DataStructures.LinkedList.LinkedList<T> arr; 
 
         public Queue() 
         { 
-            arr = new LinkedList<T>();
+            arr = new DataStructures.LinkedList.LinkedList<T>();
         }
 
         //add the obj to the end of the queue

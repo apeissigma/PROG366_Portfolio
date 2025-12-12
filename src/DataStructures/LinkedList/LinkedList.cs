@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 
-namespace DataStructures
+namespace DataStructures.LinkedList
 {
     public class LinkedList<T>
     {

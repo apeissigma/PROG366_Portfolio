@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataStructures.LinkedList;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,7 +17,7 @@ namespace DataStructures
             count = 0;
         }
 
-        public IteratorClass(LinkedList<T> linkedList)
+        public IteratorClass(DataStructures.LinkedList.LinkedList<T> linkedList)
         {
             this.dataNode = linkedList.Head;
             count = 0;
