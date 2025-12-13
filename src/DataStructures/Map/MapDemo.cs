@@ -8,7 +8,7 @@ public class MapDemo
 
     //FIXING MAPS TO INCLUDE GENERICS, WILL BE WORKING AGAIN SOON...
 
-    /*
+    
     public MapDemo()
     {
         Console.WriteLine("\n===== Linear Hashmap Implementation =====");
@@ -20,7 +20,7 @@ public class MapDemo
     
     public void LinHashDemo()
     {
-        LinearHash linHash = new LinearHash(5);
+        LinearHash<string> linHash = new LinearHash<string>(5);
 
         linHash.Put(1, "Joe");
         linHash.Put(2, "Dino");
@@ -36,10 +36,10 @@ public class MapDemo
 
         Console.WriteLine("\nGet Joe (3)");
         var temp = linHash.Get(3);
-        Console.WriteLine($" > {temp.Key}: {temp.Value}");
+        Console.WriteLine($" > {temp.key}: {temp.value}");
 
         Console.WriteLine("\nDelete Joe (3)");
-        linHash.Delete(temp.Key);
+        linHash.Delete(temp.key);
 
         linHash.About();
     }
@@ -47,7 +47,7 @@ public class MapDemo
 
     public void ChainHashDemo()
     {
-        ChainingHash chainHash = new ChainingHash(5);
+        ChainingHash<string> chainHash = new ChainingHash<string>(5);
         chainHash.Put(1, "Joe");
         chainHash.Put(2, "Dino");
         chainHash.Put(3, "Timmy");
@@ -62,12 +62,12 @@ public class MapDemo
 
         Console.WriteLine("\nGet Joe");
         var temp = chainHash.Get(1);
-        Console.WriteLine($" > {temp.Key}: {temp.Value}");
+        Console.WriteLine($" > {temp.key}: {temp.value}");
 
         Console.WriteLine("\nDelete Joe");
-        Console.WriteLine(chainHash.Delete(1).Value);
+        Console.WriteLine(chainHash.Delete(1).value);
 
         chainHash.About();
     }
-    */
+    
 }

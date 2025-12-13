@@ -4,13 +4,9 @@ using DataStructures.LinkedList;
 
 namespace DataStructures.Map
 {
-    public class ChainingHash<Value>
+    public class ChainingHash<T>
     {
-
-        //FIXING MAPS TO INCLUDE GENERICS, WILL BE WORKING AGAIN SOON...
-
-        /*
-        public LinkedList<HashData<Value>>[] arr;
+        public DataStructures.LinkedList.LinkedList<HashData<T>>[] arr;
         int size; //amount of buckets in map
         public int cap = 16; //default map capacity of 16
 
@@ -18,10 +14,10 @@ namespace DataStructures.Map
         public ChainingHash() 
         {
             size = 0;
-            arr = new LinkedList<HashData>[cap];
+            arr = new DataStructures.LinkedList.LinkedList<HashData<T>>[cap];
             for (int i = 0; i < cap; i++)
             {
-                arr[i] = new LinkedList<HashData>();
+                arr[i] = new DataStructures.LinkedList.LinkedList<HashData<T>>();
             }
         }
 
@@ -30,23 +26,23 @@ namespace DataStructures.Map
         {
             size = 0;
             cap = capInput;
-            arr = new LinkedList<HashData>[cap];
+            arr = new DataStructures.LinkedList.LinkedList<HashData<T>>[cap];
             for (int i = 0; i < cap; i++)
             {
-                arr[i] = new LinkedList<HashData>();
+                arr[i] = new DataStructures.LinkedList.LinkedList<HashData<T>>();
             }
         }
 
-        public HashData Get(int key) 
+        public HashData<T> Get(int k) 
         {
-            LinkedList<HashData> bucket = arr[Hash(key)]; //get the bucket by hashing the key
+            DataStructures.LinkedList.LinkedList<HashData<T>> bucket = arr[Hash(k)]; //get the bucket by hashing the key
 
             //iterate through the bucket
-            IIterator<HashData> iterator = bucket.Iterator(); 
+            IIterator<HashData<T>> iterator = bucket.Iterator(); 
             while (iterator.HasNext())
             {
-                HashData data = iterator.Next();
-                if (data.Key == key)
+                HashData<T> data = iterator.Next();
+                if (data.key == k)
                 {
                     return data;
                 }
@@ -55,14 +51,14 @@ namespace DataStructures.Map
             return null; //return null if empty
         }
 
-        public void Put(int key, string val) 
+        public void Put(int k, T val) 
         {
-            HashData temp = new HashData(key, val); //create temp dataObj
-            int hashCode = Hash(temp.Key); //uses value to generate hashcode
+            HashData<T> temp = new HashData<T>(k, val); //create temp dataObj
+            int hashCode = Hash(temp.key); //uses value to generate hashcode
 
-            LinkedList<HashData> bucket = arr[hashCode]; //gets the bucket that the obj will be put in
+            DataStructures.LinkedList.LinkedList<HashData<T>> bucket = arr[hashCode]; //gets the bucket that the obj will be put in
 
-            Node<HashData> currentNode = bucket.Head; 
+            Node<HashData<T>> currentNode = bucket.Head; 
             while (currentNode != null)
             {
                 currentNode = currentNode.Next; //go to next node
@@ -76,20 +72,20 @@ namespace DataStructures.Map
             }
         }
 
-        public HashData Delete(int key) 
+        public HashData<T> Delete(int k) 
         {
-            var temp = Get(key);
+            var temp = Get(k);
 
             if (temp == null)
             {
                 return null; //return if not found
             }
 
-            LinkedList<HashData> bucket = arr[Hash(key)]; //get the bucket by hashing the key
-            Node<HashData> currentNode = bucket.Head;
+            DataStructures.LinkedList.LinkedList<HashData<T>> bucket = arr[Hash(k)]; //get the bucket by hashing the key
+            Node<HashData<T>> currentNode = bucket.Head;
 
             //if the head matches, delete the first obj in the ll
-            if (currentNode.Value.Key == key)
+            if (currentNode.Value.key == k)
             {
                 bucket.RemoveFirst();
                 return temp; 
@@ -98,7 +94,7 @@ namespace DataStructures.Map
             //iterate through the rest of the bucket
             while (currentNode.Next != null)
             {
-                if (currentNode.Next.Value.Key == key)
+                if (currentNode.Next.Value.key == k)
                 {
                     currentNode.Next = currentNode.Next.Next; //remove the node
                 }
@@ -108,13 +104,14 @@ namespace DataStructures.Map
         }
 
         //generates a hashCode using the sum of ASCII values in the obj's value
+        //TODO FIX
         private int Hash(int val)
         {
             return val * 23 % cap;
         }
 
         //if the size of the map is larger than half the capacity, double the capacity
-        private void Resize(int size, ChainingHash map)
+        private void Resize(int size, ChainingHash<T> map)
         {
             if (size >= cap / 2)
             {
@@ -126,7 +123,7 @@ namespace DataStructures.Map
                 {
                     if (map.arr[i] == null)
                     {
-                        arr[i] = new LinkedList<HashData>();
+                        arr[i] = new DataStructures.LinkedList.LinkedList<HashData<T>>();
                     }
                 }
             }
@@ -138,7 +135,7 @@ namespace DataStructures.Map
 
             for (int i = 0; i < cap; i++)
             {
-                LinkedList<HashData<Value>> bucket = arr[i];
+                DataStructures.LinkedList.LinkedList<HashData<T>> bucket = arr[i];
 
                 if (bucket.Head == null)
                 {
@@ -148,15 +145,15 @@ namespace DataStructures.Map
                 Console.WriteLine($"Bucket {i}");
 
                 //iterate through the bucket
-                IIterator<HashData> iterator = bucket.Iterator();
+                IIterator<HashData<T>> iterator = bucket.Iterator();
                 while (iterator.HasNext())
                 {
-                    HashData<Value> data = iterator.Next();
-                    Console.WriteLine($" > {data.Key}: {data.Value}");
+                    HashData<T> data = iterator.Next();
+                    Console.WriteLine($" > {data.key}: {data.value}");
                 }
             }
         }
-          */
+        
     }
 
 }

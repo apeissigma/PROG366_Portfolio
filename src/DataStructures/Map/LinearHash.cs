@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Map
 {
-    public class LinearHash<Value>
+    public class LinearHash<T>
     {
-        public HashData<Value>[] arr;
+        public HashData<T>[] arr;
         public int size; //amount of obj in map
         public int cap = 16; //default map capacity of 16
         
@@ -16,7 +16,7 @@ namespace DataStructures.Map
         public LinearHash() 
         {
             size = 0;
-            arr = new HashData<Value>[cap]; 
+            arr = new HashData<T>[cap]; 
         }
 
         //overloaded constructor taking a custom capacity
@@ -24,10 +24,10 @@ namespace DataStructures.Map
         {
             size = 0;
             cap = capInput;
-            arr = new HashData<Value>[cap];
+            arr = new HashData<T>[cap];
         }
 
-        public HashData<Value> Get(int key) 
+        public HashData<T> Get(int key) 
         {
             //iterate through arr; if key is found, return obj
             for (int i = 0; i < arr.Length; i++)
@@ -40,9 +40,9 @@ namespace DataStructures.Map
             return null; //key not found
         }
 
-        public void Put(int key, Value val)
+        public void Put(int key, T val)
         {
-            HashData<Value> temp = new HashData<Value>(key, val); //create temp dataObj
+            HashData<T> temp = new HashData<T>(key, val); //create temp dataObj
             int hashCode = Hash(key); //uses key to generate hashcode
 
             while (arr[hashCode] != null)  //while buckets are filled...
@@ -58,7 +58,7 @@ namespace DataStructures.Map
             }
         }
 
-        public HashData<Value> Delete(int key) 
+        public HashData<T> Delete(int key) 
         {
             var temp = Get(key);
             arr[temp.key] = null;
