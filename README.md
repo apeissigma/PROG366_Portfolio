@@ -1,6 +1,6 @@
 # PROG366 Portfolio
 Ashani Li Peissigma
-Last updated: 12//2025
+Last updated: 12/13/2025
 
 ## Contents
 1. [Big O Notation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#big-o-notation)
@@ -415,3 +415,17 @@ END InterpolationSearch
 ```
 
 ## Tree Structures
+### Priority Queues
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/DataStructures/Tree/MinPQArray.cs)
+
+Description: 
+
+### Red/Black Balanced Search Trees
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/DataStructures/Tree/RedBlackBST.cs)
+
+Description: The Red/Black BST is a type of binary search tree that creates a more evenly balanced tree in its implementation. The Red/Black BST is a simpler implementation of the 2-3 BST Tree that changes the representation of a 3-node (made of multiple keys and links) into two connected 2-nodes denoted by a red link. 
+
+The Red/Black BST has a few rules:
++ The root is always black
++ Newly inserted nodes are red
++ No red node has a red parent or a red child
