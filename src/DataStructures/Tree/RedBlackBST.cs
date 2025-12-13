@@ -10,8 +10,8 @@ namespace DataStructures.Tree
 {
     public class RedBlackBST
     {
-        private RedBlackNode Root;
-        private int N; //number of nodes
+        public RedBlackNode Root;
+        public int Count; //number of nodes
 
         public int? Get(int key) => Get(Root, key);
 
@@ -38,15 +38,12 @@ namespace DataStructures.Tree
         {
             Root = Insert(Root, key, value);
             Root.IsRed = false; //root always black
+            Count++;
         }
 
         private RedBlackNode Insert(RedBlackNode node, int key, int value)
         {
-            if (node == null)
-            {
-                N++;
-                return new RedBlackNode(key, value, true);
-            }
+            if (node == null) return new RedBlackNode(key, value, true);
 
             if (key < node.Key) 
                 node.Left = Insert(node.Left, key, value);
@@ -122,6 +119,15 @@ namespace DataStructures.Tree
                 node.Left.IsRed = false;
                 node.Right.IsRed = false;
             }
+        }
+
+        public int Height() => Height(Root);
+
+        private int Height(RedBlackNode node)
+        {
+            if (node == null) return -1; //nothing in tree
+            //recursively check left and right subtrees, return tallest subtree height + root
+            return 1 + Math.Max(Height(node.Left), Height(node.Right));
         }
     }
 }

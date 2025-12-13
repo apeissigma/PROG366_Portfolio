@@ -30,8 +30,8 @@ namespace PROG366_Portfolio
                 Console.WriteLine("> 7:  Searching Application");
                 Console.WriteLine("> 8:  Tree Structures Demo: Priority Queue");
                 Console.WriteLine("> 9:  Tree Structures Demo: Red/Black Tree");
-                Console.WriteLine("> 9:  Graph Demo");
-                Console.WriteLine("> 10:  Quit");
+                Console.WriteLine("> 10:  Graph Demo");
+                Console.WriteLine("> 11:  Quit");
 
                 Console.Write("\nSelect a project to run: ");
                 string choiceStr = Console.ReadLine().Trim();
@@ -67,17 +67,20 @@ namespace PROG366_Portfolio
                         SearchDemo searchDemo = new SearchDemo();
                         break;
                     case 8:
-                        RedBlackBSTDemo treeDemo = new RedBlackBSTDemo(); //not implemented
+                        //pq demo
                         break;
                     case 9:
-                        GraphDemo graphDemo = new GraphDemo(); //not implemented
+                        RedBlackBSTDemo treeDemo = new RedBlackBSTDemo(); 
                         break;
                     case 10:
+                        GraphDemo graphDemo = new GraphDemo(); //not implemented
+                        break;
+                    case 11:
                         choosing = false;
                         //exit application
                         break;
                     default:
-                        Console.WriteLine("Not a valid input. Please enter a number 1-8.");
+                        Console.WriteLine("Not a valid input. Please enter a number 1-11.");
                         break;
                 }
 
