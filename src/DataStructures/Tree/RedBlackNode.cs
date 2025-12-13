@@ -8,27 +8,26 @@ namespace DataStructures.Tree
 {
     public class RedBlackNode
     {
-        public int key;
-        public int value;
+        public int Key;
+        public int Value;
 
         //subtrees
-        public RedBlackNode left;
-        public RedBlackNode right;
+        public RedBlackNode Left;
+        public RedBlackNode Right;
 
         //# of nodes in subtree
-        public int n;
+        public int N;
 
         //color of link from parent to this node
-        public bool isRed = true;
+        public bool IsRed = true;
 
         public RedBlackNode() { }
 
-        public RedBlackNode(int k, int v, int n, bool color)
+        public RedBlackNode(int k, int v, bool color)
         {
-            this.key = k;
-            this.value = v;
-            this.n = n;
-            this.isRed = color;
+            this.Key = k;
+            this.Value = v;
+            this.IsRed = color;
         }
     }
 }

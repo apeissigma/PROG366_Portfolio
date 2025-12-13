@@ -28,7 +28,8 @@ namespace PROG366_Portfolio
                 Console.WriteLine("> 5:  Linked List Demo");
                 Console.WriteLine("> 6:  Sorting Application");
                 Console.WriteLine("> 7:  Searching Application");
-                Console.WriteLine("> 8:  Tree Structures Demo");
+                Console.WriteLine("> 8:  Tree Structures Demo: Priority Queue");
+                Console.WriteLine("> 9:  Tree Structures Demo: Red/Black Tree");
                 Console.WriteLine("> 9:  Graph Demo");
                 Console.WriteLine("> 10:  Quit");
 
