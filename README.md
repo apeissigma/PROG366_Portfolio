@@ -9,6 +9,7 @@ Last updated: 12/13/2025
 4. [Sorting Algorithms](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#sorting-algorithms)
 5. [Searching Algorithms](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#searching-algorithms)
 6. [Tree Structures](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#tree-structures)
+7. [Graph Structures](https://github.com/apeissigma/PROG366_Portfolio/blob/main/README.md#graph-structures)
 
 ## Big O Notation
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/tree/main/src/BigO)
