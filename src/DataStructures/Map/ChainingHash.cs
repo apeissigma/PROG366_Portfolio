@@ -54,8 +54,7 @@ namespace DataStructures.Map
         public void Put(int k, T val) 
         {
             HashData<T> temp = new HashData<T>(k, val); //create temp dataObj
-            int hashCode = Hash(temp.key); //uses value to generate hashcode
-
+            int hashCode = Hash(k); //uses value to generate hashcode
             DataStructures.LinkedList.LinkedList<HashData<T>> bucket = arr[hashCode]; //gets the bucket that the obj will be put in
 
             Node<HashData<T>> currentNode = bucket.Head; 
@@ -88,6 +87,7 @@ namespace DataStructures.Map
             if (currentNode.Value.key == k)
             {
                 bucket.RemoveFirst();
+                size--;
                 return temp; 
             }
 
@@ -100,20 +100,20 @@ namespace DataStructures.Map
                 }
                 currentNode = currentNode.Next; //go to next node
             }
+            size--;
             return temp;
         }
 
-        //generates a hashCode using the sum of ASCII values in the obj's value
-        //TODO FIX
-        private int Hash(int val)
+        //generates a hashCode using the obj's key
+        private int Hash(int key)
         {
-            return val * 23 % cap;
+            return key * 23 % cap;
         }
 
-        //if the size of the map is larger than half the capacity, double the capacity
+        //if the size of the map is larger than 3/4 the capacity, double the capacity
         private void Resize(int size, ChainingHash<T> map)
         {
-            if (size >= cap / 2)
+            if (size >= cap * 0.75)
             {
                 cap = cap * 2;
                 Array.Resize(ref arr, cap);

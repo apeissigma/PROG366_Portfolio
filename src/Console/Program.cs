@@ -55,7 +55,7 @@ namespace PROG366_Portfolio
                         StackVsQueueDemo qsDemo = new StackVsQueueDemo();
                         break;
                     case 4:
-                        MapDemo mapDemo = new MapDemo(); //not working, fix 
+                        MapDemo mapDemo = new MapDemo(); 
                         break;
                     case 5:
                         LinkedListDemo llDemo = new LinkedListDemo();

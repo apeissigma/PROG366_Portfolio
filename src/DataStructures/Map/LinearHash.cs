@@ -62,6 +62,7 @@ namespace DataStructures.Map
         {
             var temp = Get(key);
             arr[temp.key] = null;
+            size--;
             return temp; 
         }
 
@@ -74,9 +75,9 @@ namespace DataStructures.Map
         //if the size of the map is larger than half the capacity, double the capacity
         private void Resize(int size)
         {
-            if (size >= cap / 2)
+            if (size >= cap * 0.75)
             {
-                cap = cap * 2;
+                cap = (cap * 2);
                 Array.Resize(ref arr, cap);
             }
         }
@@ -90,11 +91,7 @@ namespace DataStructures.Map
                 if (arr[i] != null)
                 {
                     Console.WriteLine($" > {arr[i].key}: {arr[i].value}");
-                }
-                else
-                {
-                    Console.WriteLine($" > {i}: --");
-                }
+                } 
             }
         }
     }

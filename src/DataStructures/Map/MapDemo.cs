@@ -5,40 +5,36 @@ namespace DataStructures.Map;
 
 public class MapDemo
 {
-
-    //FIXING MAPS TO INCLUDE GENERICS, WILL BE WORKING AGAIN SOON...
-
-    
     public MapDemo()
     {
-        Console.WriteLine("\n===== Linear Hashmap Implementation =====");
+        Console.WriteLine("\n========== Linear Hashmap Implementation ==========");
         LinHashDemo();
-        Console.WriteLine("\n===== Chaining Hashmap Implementation =====");
+        Console.WriteLine("\n========== Chaining Hashmap Implementation ==========");
         ChainHashDemo();
     }
 
     
     public void LinHashDemo()
     {
-        LinearHash<string> linHash = new LinearHash<string>(5);
+        LinearHash<string> linHash = new LinearHash<string>();
 
         linHash.Put(1, "Joe");
-        linHash.Put(2, "Dino");
+        linHash.Put(2, "Dino"); 
         linHash.Put(3, "Timmy");
-        linHash.Put(4, "Jonathan");
+        linHash.Put(4, "Jonathan"); 
         linHash.Put(5, "Annie");
         linHash.Put(6, "Ernie");
         linHash.Put(7, "Vincent");
-        linHash.Put(8, "Felix");
+        linHash.Put(8, "Felix"); 
         linHash.Put(9, "Sabrina");
 
         linHash.About();
 
-        Console.WriteLine("\nGet Joe (3)");
+        Console.WriteLine("\nGet Timmy (key 3)");
         var temp = linHash.Get(3);
-        Console.WriteLine($" > {temp.key}: {temp.value}");
+        Console.WriteLine($" > Key: {temp.key}, Value: {temp.value}");
 
-        Console.WriteLine("\nDelete Joe (3)");
+        Console.WriteLine("\nDelete Timmy (key 3)");
         linHash.Delete(temp.key);
 
         linHash.About();
@@ -47,25 +43,26 @@ public class MapDemo
 
     public void ChainHashDemo()
     {
-        ChainingHash<string> chainHash = new ChainingHash<string>(5);
+        ChainingHash<string> chainHash = new ChainingHash<string>();
+
         chainHash.Put(1, "Joe");
-        chainHash.Put(2, "Dino");
-        chainHash.Put(3, "Timmy");
+        chainHash.Put(2, "Dino"); 
+        chainHash.Put(3, "Timmy"); 
         chainHash.Put(4, "Jonathan");
         chainHash.Put(5, "Annie");
         chainHash.Put(6, "Ernie");
-        chainHash.Put(7, "Vincent");
+        chainHash.Put(7, "Vincent"); 
         chainHash.Put(8, "Felix");
-        chainHash.Put(9, "Sabrina");
+        chainHash.Put(9, "Sabrina"); 
 
         chainHash.About();
 
-        Console.WriteLine("\nGet Joe");
-        var temp = chainHash.Get(1);
-        Console.WriteLine($" > {temp.key}: {temp.value}");
+        Console.WriteLine("\nGet Timmy (3)");
+        var temp = chainHash.Get(3);
+        Console.WriteLine($" > Key: {temp.key}, Value: {temp.value}");
 
-        Console.WriteLine("\nDelete Joe");
-        Console.WriteLine(chainHash.Delete(1).value);
+        Console.WriteLine("\nDelete Timmy");
+        Console.WriteLine(chainHash.Delete(3).value);
 
         chainHash.About();
     }
