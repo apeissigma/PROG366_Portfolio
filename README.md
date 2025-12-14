@@ -418,7 +418,7 @@ END InterpolationSearch
 ### Priority Queues
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/DataStructures/Tree/MinPQArray.cs)
 
-Description: 
+Description: A priority queue is a structure where each element is associated with a priority value rather than its order of insertion. When new elements are added, they are inserted according to their priority. Priority queues are often implemented using a tree structure called a binary heap, which ensures that the highest element (in a max-heap) or lowest element (in a min-heap) is always at the root. 
 
 ### Red/Black Balanced Search Trees
 [Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/DataStructures/Tree/RedBlackBST.cs)
@@ -429,3 +429,8 @@ The Red/Black BST has a few rules:
 + The root is always black
 + Newly inserted nodes are red
 + No red node has a red parent or a red child
+
+## Graph Structures
+[Implementation](https://github.com/apeissigma/PROG366_Portfolio/blob/main/src/DataStructures/Graph/Graph.cs) 
+
+Description: A graph is a non-linear data structure composed of a collection of vertices and the edges that connect a pair of vertices. 
