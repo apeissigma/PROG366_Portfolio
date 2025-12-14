@@ -20,12 +20,15 @@ namespace DataStructures.Graph
         public Graph()
         {
             matrix = new Dictionary<int, List<int>>();
+            V = 0;
+            E = 0;
         }
 
         public void addVertice(int v)
         {
             //don't check to see if already exists cus not a simple graph
-            matrix.Add(v, null);
+            matrix.Add(v, new List<int>()); //empty list with no edges
+            V++;
         }
 
         //add edge v-w to this graph
@@ -34,40 +37,67 @@ namespace DataStructures.Graph
             //if v and or w does not exist, add them
             if (!matrix.ContainsKey(v))
             {
-                matrix.Add(v, null);
+                matrix.Add(v, new List<int>());
                 V++;
             }
             if (!matrix.ContainsKey(w))
             {
-                matrix.Add(w, null);
+                matrix.Add(w, new List<int>());
                 V++;
             }
 
             //add w to v's list
-            //if v does not have a list, create
-            if (matrix[v] == null) matrix[v] = new List<int>();
             matrix[v].Add(w);
-            E++;
 
             //add v to w's list
-            if (matrix[w] == null) matrix[w] = new List<int>();
             matrix[w].Add(v);
+
+            //increment edges
             E++;
         }
 
         //return how many vertexes are incident
-        //how many connections the vertexes
         public int Degree(int v)
         {
+            if (!matrix.ContainsKey(v)) return -1; //vertex does not exist
+
             return matrix[v].Count;
         }
 
-        //return the degrees of the vertex with the max
-        //amount of degrees
-        //public int MaxDegree() { }
+        //return the degrees of the vertex that has the max amount of degrees
+        public int MaxDegree()
+        {
+            if (V == 0) return 0; //no vertices
 
-        //public float AverageDegree() {}
+            int max = 0;
+            foreach (var vertex in matrix.Keys)
+            {
+                int degree = Degree(vertex);
+                if (degree > max) max = degree; //set new max
+            }
 
-        //public int NumberOfSelfLoops() {}
+            return max;
+        }
+
+        public float AverageDegree() 
+        {
+            if (V == 0) return 0; //no vertices
+
+            float avg = 0;
+            foreach (var v in matrix.Keys) avg += Degree(v);
+            return avg = avg / V; 
+
+        }
+
+        //count occurances where a vertex is on it's own adjacency list
+        public int NumberOfSelfLoops() 
+        {
+            int count = 0;
+            foreach (var v in matrix.Keys)
+            {
+                if (matrix[v] != null && matrix[v].Contains(v)) count++;
+            }
+            return count;
+        }
     }
 }

@@ -73,7 +73,7 @@ namespace PROG366_Portfolio
                         RedBlackBSTDemo treeDemo = new RedBlackBSTDemo(); 
                         break;
                     case 10:
-                        GraphDemo graphDemo = new GraphDemo(); //not implemented
+                        GraphDemo graphDemo = new GraphDemo(); 
                         break;
                     case 11:
                         choosing = false;
